@@ -242,12 +242,8 @@
     {
         "id": 32182,
         "names": [
-<<<<<<< HEAD
-            "Heroism"
-=======
             "Heroism",
             "Bloodlust"
->>>>>>> master
         ],
         "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_bloodlust.jpg",
         "hint": "Massive haste buff for your group.",
