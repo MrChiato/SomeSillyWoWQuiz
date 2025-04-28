@@ -1,6 +1,7 @@
 [
     {
         "id": 100,
+        "difficulty": 1,
         "names": [
             "Charge"
         ],
@@ -10,6 +11,7 @@
     },
     {
         "id": 12294,
+        "difficulty": 2,
         "names": [
             "Mortal Strike",
             "Savage Blow"
@@ -20,9 +22,9 @@
     },
     {
         "id": 133,
+        "difficulty": 1,
         "names": [
-            "Fireball",
-            "Fire Ball"
+            "Fireball"
         ],
         "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_fire_flamebolt.jpg",
         "hint": "Burns over time.",
@@ -30,9 +32,9 @@
     },
     {
         "id": 116,
+        "difficulty": 1,
         "names": [
-            "Frostbolt",
-            "Frost Bolt"
+            "Frostbolt"
         ],
         "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_frost_frostbolt02.jpg",
         "hint": "Slows movement.",
@@ -40,6 +42,7 @@
     },
     {
         "id": 853,
+        "difficulty": 2,
         "names": [
             "Hammer of Justice",
             "HoJ"
@@ -50,6 +53,7 @@
     },
     {
         "id": 172,
+        "difficulty": 3,
         "names": [
             "Corruption"
         ],
@@ -59,6 +63,7 @@
     },
     {
         "id": 585,
+        "difficulty": 1,
         "names": [
             "Smite"
         ],
@@ -68,6 +73,7 @@
     },
     {
         "id": 686,
+        "difficulty": 2,
         "names": [
             "Shadow Bolt"
         ],
@@ -77,9 +83,12 @@
     },
     {
         "id": 403,
+        "difficulty": 1,
         "names": [
             "Lightning Bolt",
-            "Arcane Power"
+            "Arcane Power",
+            "Thunderstorm",
+            "Innervate"
         ],
         "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_lightning.jpg",
         "hint": "Nature damage strike.",
@@ -87,6 +96,7 @@
     },
     {
         "id": 1953,
+        "difficulty": 1,
         "names": [
             "Blink"
         ],
@@ -96,6 +106,7 @@
     },
     {
         "id": 8122,
+        "difficulty": 2,
         "names": [
             "Psychic Scream"
         ],
@@ -105,6 +116,7 @@
     },
     {
         "id": 34433,
+        "difficulty": 3,
         "names": [
             "Shadowfiend"
         ],
@@ -114,6 +126,7 @@
     },
     {
         "id": 8092,
+        "difficulty": 1,
         "names": [
             "Mind Blast"
         ],
@@ -122,16 +135,8 @@
         "description": "Blasts the target's mind for heavy Shadow damage."
     },
     {
-        "id": 36554,
-        "names": [
-            "Shadowstep"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_rogue_shadowstep.jpg",
-        "hint": "Teleports behind your enemy.",
-        "description": "Attempts to step through the shadows and reappear behind your enemy, increasing movement speed for a short time."
-    },
-    {
         "id": 2983,
+        "difficulty": 1,
         "names": [
             "Sprint"
         ],
@@ -141,6 +146,7 @@
     },
     {
         "id": 1856,
+        "difficulty": 2,
         "names": [
             "Vanish"
         ],
@@ -150,15 +156,17 @@
     },
     {
         "id": 30283,
+        "difficulty": 2,
         "names": [
             "Shadowfury"
         ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_shadow_shadowfury.jpg",
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_warlock_shadowfurytga.jpg",
         "hint": "AoE stun.",
         "description": "Calls down a bolt of shadow energy, stunning all enemies within the area for 3 seconds."
     },
     {
         "id": 206803,
+        "difficulty": 3,
         "names": [
             "Rain from Above"
         ],
@@ -168,6 +176,7 @@
     },
     {
         "id": 58984,
+        "difficulty": 1,
         "names": [
             "Shadowmeld"
         ],
@@ -177,6 +186,7 @@
     },
     {
         "id": 19506,
+        "difficulty": 1,
         "names": [
             "Trueshot Aura"
         ],
@@ -186,6 +196,7 @@
     },
     {
         "id": 693,
+        "difficulty": 1,
         "names": [
             "Create Healthstone"
         ],
@@ -195,15 +206,117 @@
     },
     {
         "id": 10059,
+        "difficulty": 3,
         "names": [
             "Portal: Stormwind"
         ],
         "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portalstormwind.jpg",
-        "hint": "Opens a portal to Stormwind.",
+        "hint": "Opens a portal to somewhere.",
         "description": "Creates a portal, teleporting group members that use it to Stormwind."
     },
     {
+        "id": 10059,
+        "difficulty": 3,
+        "names": [
+            "Portal: Ironforge"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portalironforge.jpg",
+        "hint": "Opens a portal to somewhere.",
+        "description": "Creates a portal, teleporting group members that use it to Ironforge."
+    },
+    {
+        "id": 10059,
+        "difficulty": 3,
+        "names": [
+            "Portal: Darnassus"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portaldarnassus.jpg",
+        "hint": "Opens a portal to somewhere.",
+        "description": "Creates a portal, teleporting group members that use it to Darnassus."
+    },
+    {
+        "id": 10059,
+        "difficulty": 3,
+        "names": [
+            "Portal: Stonard"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portalstonard.jpg",
+        "hint": "Opens a portal to somewhere.",
+        "description": "Creates a portal, teleporting group members that use it to Stonard."
+    },
+    {
+        "id": 10059,
+        "difficulty": 2,
+        "names": [
+            "Portal: Orgrimmar"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portalorgrimmar.jpg",
+        "hint": "Opens a portal to somewhere.",
+        "description": "Creates a portal, teleporting group members that use it to Orgrimmar."
+    },
+    {
+        "id": 10059,
+        "difficulty": 3,
+        "names": [
+            "Portal: Dazar'alor"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portalzandalar.jpg",
+        "hint": "Opens a portal to somewhere.",
+        "description": "Creates a portal, teleporting group members that use it to Dazar'alor."
+    },
+    {
+        "id": 10059,
+        "difficulty": 3,
+        "names": [
+            "Portal: Dornogal"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portaldornogal.jpg",
+        "hint": "Opens a portal to somewhere.",
+        "description": "Creates a portal, teleporting group members that use it to Dornogal."
+    },
+    {
+        "id": 10059,
+        "difficulty": 3,
+        "names": [
+            "Portal: Valdrakken"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portalvaldrakken.jpg",
+        "hint": "Opens a portal to somewhere.",
+        "description": "Creates a portal, teleporting group members that use it to Valdrakken."
+    },
+    {
+        "id": 10059,
+        "difficulty": 3,
+        "names": [
+            "Portal: Oribos"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portaloribos.jpg",
+        "hint": "Opens a portal to somewhere.",
+        "description": "Creates a portal, teleporting group members that use it to Oribos."
+    },
+    {
+        "id": 10059,
+        "difficulty": 3,
+        "names": [
+            "Portal: Undercity"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portalundercity.jpg",
+        "hint": "Opens a portal to somewhere.",
+        "description": "Creates a portal, teleporting group members that use it to Undercity."
+    },
+    {
+        "id": 10059,
+        "difficulty": 3,
+        "names": [
+            "Portal: Silvermoon"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portalsilvermoon.jpg",
+        "hint": "Opens a portal to somewhere.",
+        "description": "Creates a portal, teleporting group members that use it to Silvermoon."
+    },
+    {
         "id": 50613,
+        "difficulty": 2,
         "names": [
             "Arcane Barrage"
         ],
@@ -213,6 +326,7 @@
     },
     {
         "id": 42292,
+        "difficulty": 2,
         "names": [
             "Medallion of the Alliance",
             "PvP Trinket"
@@ -222,16 +336,8 @@
         "description": "Removes all movement impairing effects and all effects that cause loss of control of your character."
     },
     {
-        "id": 51490,
-        "names": [
-            "Thunderstorm"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_lightning.jpg",
-        "hint": "Blasts enemies away with nature.",
-        "description": "Calls down a bolt of lightning, knocking back enemies within 10 yards and dealing Nature damage."
-    },
-    {
         "id": 32182,
+        "difficulty": 1,
         "names": [
             "Heroism",
             "Bloodlust",
@@ -243,6 +349,7 @@
     },
     {
         "id": 12051,
+        "difficulty": 2,
         "names": [
             "Evocation"
         ],
@@ -252,6 +359,7 @@
     },
     {
         "id": 47541,
+        "difficulty": 1,
         "names": [
             "Death Coil"
         ],
@@ -261,6 +369,7 @@
     },
     {
         "id": 47568,
+        "difficulty": 2,
         "names": [
             "Empower Rune Weapon"
         ],
@@ -270,6 +379,7 @@
     },
     {
         "id": 104773,
+        "difficulty": 2,
         "names": [
             "Unending Resolve"
         ],
@@ -279,6 +389,7 @@
     },
     {
         "id": 36554,
+        "difficulty": 2,
         "names": [
             "Shadowstep"
         ],
@@ -288,6 +399,7 @@
     },
     {
         "id": 212653,
+        "difficulty": 1,
         "names": [
             "Shimmer",
             "Mass Dispel"
@@ -298,42 +410,31 @@
     },
     {
         "id": 132578,
+        "difficulty": 3,
         "names": [
-            "Invoke Yu'lon, the Jade Serpent"
+            "Invoke Yu'lon, the Jade Serpent",
+            "Celestial Breath",
+            "Heart of the Jade Serpent",
+            "Dragon Punch"
         ],
         "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_monk_chibrew.jpg",
         "hint": "Summon Yu'lon to heal allies.",
         "description": "Summons an image of Yu'lon that breathes healing mist onto injured allies."
     },
     {
-        "id": 193526,
-        "names": [
-            "Trueshot"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_hunter_focusedaim.jpg",
-        "hint": "Boosts critical strike and haste.",
-        "description": "Increases your haste and critical strike chance by 20% for 15 seconds."
-    },
-    {
         "id": 51052,
+        "difficulty": 2,
         "names": [
-            "Anti-Magic Zone"
+            "Anti-Magic Zone",
+            "AMZ"
         ],
         "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_deathknight_antimagiczone.jpg",
         "hint": "Protects allies from magic.",
         "description": "Places a shield that reduces magic damage taken by party and raid members by 20%."
     },
     {
-        "id": 85384,
-        "names": [
-            "Raging Blow"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_warrior_ragingblow.jpg",
-        "hint": "A strong physical blow.",
-        "description": "A furious blow that deals Physical damage to your target."
-    },
-    {
         "id": 122470,
+        "difficulty": 1,
         "names": [
             "Touch of Karma"
         ],
@@ -343,15 +444,18 @@
     },
     {
         "id": 116680,
+        "difficulty": 2,
         "names": [
-            "Thunder Focus Tea"
+            "Thunder Focus Tea",
+            "Secret Infusion"
         ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_lightning.jpg",
-        "hint": "Empowers your next spell.",
-        "description": "Drink a rejuvenating brew, causing your next spell to have increased effectiveness."
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_monk_thunderfocustea.jpg",
+        "hint": "Drink some tea.",
+        "description": "Receive a jolt of energy, empowering your next spell cast."
     },
     {
         "id": 190319,
+        "difficulty": 1,
         "names": [
             "Combustion"
         ],
@@ -361,15 +465,17 @@
     },
     {
         "id": 190336,
+        "difficulty": 2,
         "names": [
             "Conjure Refreshment"
         ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_manaamulet.jpg",
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_food_73cinnamonroll.jpg",
         "hint": "Creates food and drink for allies.",
         "description": "Conjures a table of refreshments that restores health and mana."
     },
     {
         "id": 324,
+        "difficulty": 2,
         "names": [
             "Lightning Shield"
         ],
@@ -379,6 +485,7 @@
     },
     {
         "id": 45438,
+        "difficulty": 1,
         "names": [
             "Ice Block"
         ],
@@ -388,6 +495,7 @@
     },
     {
         "id": 2139,
+        "difficulty": 1,
         "names": [
             "Counterspell"
         ],
@@ -397,6 +505,7 @@
     },
     {
         "id": 32546,
+        "difficulty": 3,
         "names": [
             "Binding Heal"
         ],
@@ -406,6 +515,7 @@
     },
     {
         "id": 115098,
+        "difficulty": 2,
         "names": [
             "Chi Wave"
         ],
@@ -415,15 +525,17 @@
     },
     {
         "id": 137639,
+        "difficulty": 3,
         "names": [
             "Storm, Earth, and Fire"
         ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/monk_ability_stormearthandfire.jpg",
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_giftofthewild.jpg",
         "hint": "Creates spirit clones to attack enemies.",
         "description": "Split into elemental spirits to attack multiple enemies simultaneously."
     },
     {
         "id": 102342,
+        "difficulty": 1,
         "names": [
             "Ironbark"
         ],
@@ -433,6 +545,7 @@
     },
     {
         "id": 740,
+        "difficulty": 1,
         "names": [
             "Tranquility"
         ],
@@ -442,6 +555,7 @@
     },
     {
         "id": 198838,
+        "difficulty": 1,
         "names": [
             "Earthen Wall Totem",
             "barkskin"
@@ -452,6 +566,7 @@
     },
     {
         "id": 31850,
+        "difficulty": 1,
         "names": [
             "Ardent Defender"
         ],
@@ -461,6 +576,7 @@
     },
     {
         "id": 198103,
+        "difficulty": 1,
         "names": [
             "Earth Elemental"
         ],
@@ -469,34 +585,8 @@
         "description": "Calls forth an Earth Elemental to protect you and your allies for a short time."
     },
     {
-        "id": 281400,
-        "names": [
-            "Teleport: THE MOTHERLODE!!"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portalmothership.jpg",
-        "hint": "Teleport to the MOTHERLODE!! dungeon.",
-        "description": "Teleports the caster to THE MOTHERLODE!! dungeon entrance."
-    },
-    {
-        "id": 53142,
-        "names": [
-            "Portal: Dalaran - Northrend"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portaldalaran.jpg",
-        "hint": "Opens a portal to Dalaran in Northrend.",
-        "description": "Creates a portal, teleporting group members to Dalaran in Northrend."
-    },
-    {
-        "id": 344597,
-        "names": [
-            "Teleport: Oribos"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_animarevendreth_buff.jpg",
-        "hint": "Teleport to the capital of the Shadowlands.",
-        "description": "Teleports the caster to Oribos, the Eternal City."
-    },
-    {
         "id": 8690,
+        "difficulty": 1,
         "names": [
             "Hearthstone"
         ],
@@ -506,6 +596,7 @@
     },
     {
         "id": 60320,
+        "difficulty": 3,
         "names": [
             "Scroll of Recall"
         ],
@@ -514,25 +605,8 @@
         "description": "Returns you to your hearthstone location. Slight chance of failure."
     },
     {
-        "id": 410078,
-        "names": [
-            "Dreamwalk"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_druid_dreamwalk.jpg",
-        "hint": "Teleport to the Dreamgrove.",
-        "description": "Teleports you to the Dreamgrove in Val'sharah."
-    },
-    {
-        "id": 373861,
-        "names": [
-            "Dracthyr Soar"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_evoker_soar.jpg",
-        "hint": "Fly like a dragon across the skies.",
-        "description": "Launch yourself into the air and soar at high speeds, similar to dragonriding."
-    },
-    {
         "id": 390386,
+        "difficulty": 3,
         "names": [
             "Time Spiral"
         ],
@@ -541,34 +615,28 @@
         "description": "Allows allies to cast a major movement ability that is normally on cooldown."
     },
     {
-        "id": 410065,
-        "names": [
-            "Waking Portal: Valdrakken"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_evoker_wakingdream.jpg",
-        "hint": "Creates a portal to Valdrakken.",
-        "description": "Creates a portal that teleports party members to Valdrakken in the Dragon Isles."
-    },
-    {
         "id": 161691,
+        "difficulty": 3,
         "names": [
             "Teleport: Warspear"
         ],
         "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portalwarspear.jpg",
-        "hint": "Teleport to Warspear, Ashran.",
+        "hint": "Get somewhere in a short cast",
         "description": "Teleports the caster to Warspear, the Horde base on Ashran."
     },
     {
         "id": 161792,
+        "difficulty": 3,
         "names": [
             "Teleport: Stormshield"
         ],
         "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portalstormshield.jpg",
-        "hint": "Teleport to Stormshield, Ashran.",
+        "hint": "Get somewhere in a short cast",
         "description": "Teleports the caster to Stormshield, the Alliance base on Ashran."
     },
     {
         "id": 224869,
+        "difficulty": 2,
         "names": [
             "Toy Train Set"
         ],
@@ -577,16 +645,8 @@
         "description": "Place a toy train set that attracts the attention of nearby players and causes them to /train emote."
     },
     {
-        "id": 183601,
-        "names": [
-            "Inflatable Thunderfury, Blessed Blade of the Windseeker"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/inv_sword_39.jpg",
-        "hint": "A silly version of Thunderfury.",
-        "description": "Summons an inflatable version of the legendary Thunderfury for party fun."
-    },
-    {
         "id": 122,
+        "difficulty": 1,
         "names": [
             "Frost Nova"
         ],
@@ -596,6 +656,7 @@
     },
     {
         "id": 118,
+        "difficulty": 1,
         "names": [
             "Polymorph"
         ],
@@ -605,6 +666,7 @@
     },
     {
         "id": 61295,
+        "difficulty": 2,
         "names": [
             "Riptide"
         ],
@@ -614,6 +676,7 @@
     },
     {
         "id": 11426,
+        "difficulty": 2,
         "names": [
             "Ice Barrier"
         ],
@@ -623,6 +686,7 @@
     },
     {
         "id": 11366,
+        "difficulty": 1,
         "names": [
             "Pyroblast"
         ],
@@ -632,6 +696,7 @@
     },
     {
         "id": 2823,
+        "difficulty": 2,
         "names": [
             "Deadly Poison"
         ],
@@ -641,6 +706,7 @@
     },
     {
         "id": 5938,
+        "difficulty": 1,
         "names": [
             "Shiv"
         ],
@@ -649,52 +715,18 @@
         "description": "Thrusts with your off-hand weapon to apply an instant poison effect."
     },
     {
-        "id": 165669,
-        "names": [
-            "Hallowed Wand - Skeleton"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/inv_misc_bone_elfskull_01.jpg",
-        "hint": "Turns your friends into a skeleton!",
-        "description": "Transforms a friendly target into a spooky skeleton for fun."
-    },
-    {
-        "id": 165670,
-        "names": [
-            "Hallowed Wand - Pirate"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/inv_boots_cloth_05.jpg",
-        "hint": "Turns your friends into a pirate!",
-        "description": "Transforms a friendly target into a pirate costume temporarily."
-    },
-    {
         "id": 83968,
+        "difficulty": 1,
         "names": [
             "Mass Resurrection"
         ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_priest_massresurrection.jpg",
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/achievement_guildperk_massresurrection.jpg",
         "hint": "Revives all dead party members.",
         "description": "Brings all dead party and raid members back to life with 35% health and mana."
     },
     {
-        "id": 32375,
-        "names": [
-            "Mass Dispel"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_massdispel.jpg",
-        "hint": "Dispels magic in an area.",
-        "description": "Removes harmful magic effects from allies and beneficial magic effects from enemies in an area."
-    },
-    {
-        "id": 18562,
-        "names": [
-            "Swiftmend"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/inv_relics_idolofrejuvenation.jpg",
-        "hint": "Consume a heal over time effect for an instant heal.",
-        "description": "Consumes a heal-over-time effect to instantly heal the target."
-    },
-    {
         "id": 34477,
+        "difficulty": 1,
         "names": [
             "Misdirection"
         ],
@@ -703,12 +735,93 @@
         "description": "Redirects all threat you cause to a friendly target for 8 seconds."
     },
     {
-        "id": 78674,
+        "id": 194153,
+        "difficulty": 1,
         "names": [
-            "Starsurge"
+            "Starfire"
         ],
         "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_starfire.jpg",
-        "hint": "Blast your enemy with lunar and solar energy.",
-        "description": "Launch a surge of stellar energies at the target, dealing massive Astral damage."
+        "hint": "Blast your enemy with lunar energy.",
+        "description": "Call down a burst of energy, causing Arcane damage to the target."
+    },
+    {
+        "id": 445417,
+        "difficulty": 3,
+        "names": [
+            "Path of the Ruined City"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_achievement_dungeon_arak-ara.jpg",
+        "hint": "Teleport to dungeon entrance.",
+        "description": "Teleport to the entrance to Ara-Kara, City of Echoes."
+    },
+    {
+        "id": 354463,
+        "difficulty": 3,
+        "names": [
+            "Path of the Plagued"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/achievement_dungeon_plaguefall.jpg",
+        "hint": "Teleport to dungeon entrance.",
+        "description": "Teleport to the entrance to Plaguefall."
+    },
+    {
+        "id": 393279,
+        "difficulty": 3,
+        "names": [
+            "Path of Arcane Secrets "
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/achievement_dungeon_arcanevaults.jpg",
+        "hint": "Teleport to dungeon entrance.",
+        "description": "Teleport to the entrance to The Azure Vault."
+    },
+    {
+        "id": 131204,
+        "difficulty": 3,
+        "names": [
+            "Path of the Jade Serpent"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/achievement_jadeserpent.jpg",
+        "hint": "Teleport to dungeon entrance.",
+        "description": "Teleport to the entrance to the Temple of the Jade Serpent.."
+    },
+    {
+        "id": 159898,
+        "difficulty": 3,
+        "names": [
+            "Path of the Skies"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/achievement_dungeon_arakkoaspires.jpg",
+        "hint": "Teleport to dungeon entrance.",
+        "description": "Teleport to the entrance to Skyreach."
+    },
+    {
+        "id": 424142,
+        "difficulty": 3,
+        "names": [
+            "Path of the Tidehunter"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/achievement_dungeon_throne-of-the-tides.jpg",
+        "hint": "Teleport to dungeon entrance.",
+        "description": "Teleport to the entrance to Throne of the Tides."
+    },
+    {
+        "id": 354464,
+        "difficulty": 3,
+        "names": [
+            "Path of the Misty Forest"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/achievement_dungeon_mistsoftirnascithe.jpg",
+        "hint": "Teleport to dungeon entrance.",
+        "description": "Teleport to the entrance to Mists of Tirna Scithe."
+    },
+    {
+        "id": 445441,
+        "difficulty": 3,
+        "names": [
+            "Path of the Warding Candles"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_achievement_dungeon_darkflamecleft.jpg",
+        "hint": "Teleport to dungeon entrance.",
+        "description": "Teleport to the entrance to Darkflame Cleft."
     }
 ]

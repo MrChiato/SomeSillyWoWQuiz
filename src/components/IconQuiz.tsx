@@ -3,7 +3,6 @@ import {
     useEffect,
     ChangeEvent,
     KeyboardEvent,
-    useRef,
 } from 'react';
 import Fuse from 'fuse.js';
 import spells from '../data/spells.json';
@@ -14,6 +13,7 @@ export type Spell = {
     iconUrl: string;
     hint: string;
     description: string;
+    difficulty: number;
 };
 
 const allSpells: Spell[] = spells;
@@ -33,56 +33,66 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
     const [spell, setSpell] = useState<Spell | null>(null);
     const [wrongs, setWrongs] = useState<string[]>([]);
     const [usedIds, setUsedIds] = useState<Set<number>>(new Set());
-
     const [score, setScore] = useState(0);
     const [lives, setLives] = useState(10);
-
     const [guess, setGuess] = useState('');
 
+    const [highlighted, setHighlighted] = useState(-1);
+
     const [messages, setMessages] = useState<
-        Array<{ id: number; text: string; type: 'correct' | 'wrong'; x: number }>
+        Array<{ id: number; text: string; type: 'correct' | 'wrong' | 'reveal'; x: number }>
     >([]);
 
-    const spawnMessage = (text: string, type: 'correct' | 'wrong') => {
+    const spawnMessage = (
+        text: string,
+        type: 'correct' | 'wrong' | 'reveal'
+    ) => {
         const id = Date.now() + Math.random();
         const x = Math.random() * 80 - 40;
         setMessages((m) => [...m, { id, text, type, x }]);
         setTimeout(() => {
             setMessages((m) => m.filter((msg) => msg.id !== id));
-        }, 1000);
+        }, 3000);
     };
 
     const pickNextSpell = () => {
         const remaining = allSpells.filter((s) => !usedIds.has(s.id));
         if (remaining.length === 0) {
-            endGame();
+            onGameOver(score);
             return;
         }
-        const next = remaining[Math.floor(Math.random() * remaining.length)];
+
+        let pool: Spell[];
+        if (score < 5) {
+            pool = remaining.filter((s) => s.difficulty === 1);
+        } else if (score < 10) {
+            pool = remaining.filter((s) => s.difficulty <= 2);
+        } else {
+            pool = remaining;
+        }
+
+        const next = pool[Math.floor(Math.random() * pool.length)];
+
         setSpell(next);
         setWrongs([]);
         setUsedIds((prev) => new Set(prev).add(next.id));
         setGuess('');
     };
 
-    const endGame = () => {
-        onGameOver(score);
-    };
+    useEffect(() => pickNextSpell(), []);
 
     useEffect(() => {
-        pickNextSpell();
-    }, []);
-
-    useEffect(() => {
-        if (wrongs.length >= 3) {
+        if (wrongs.length >= 3 && spell) {
             setLives((l) => l - 1);
+            spawnMessage(spell.names[0], 'reveal');
             pickNextSpell();
         }
-    }, [wrongs]);
+    }, [wrongs, spell]);
 
     useEffect(() => {
-        if (lives <= 0) {
-            endGame();
+        if (lives <= 0 && spell) {
+            spawnMessage(spell.names[0], 'wrong');
+            onGameOver(score);
         }
     }, [lives]);
 
@@ -92,24 +102,47 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
             (n) => n.toLowerCase() === value.toLowerCase()
         );
         if (match) {
-            spawnMessage('Correct', 'correct');
+            spawnMessage(spell.names[0], 'correct');
             setScore((s) => s + 1);
             pickNextSpell();
         } else {
-            spawnMessage('Wrong', 'wrong');
+            spawnMessage(value, 'wrong');
             setWrongs((ws) => [...ws, value]);
             setLives((l) => l - 1);
         }
         setGuess('');
     };
 
-    const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setGuess(e.target.value);
+    const onPass = () => {
+        if (!spell) return;
+        setLives((l) => l - 1);
+        spawnMessage(spell.names[0], 'reveal');
+        pickNextSpell();
     };
+
+    const onInputChange = (e: ChangeEvent<HTMLInputElement>) =>
+        setGuess(e.target.value);
     const onKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter') {
+        if (e.key === 'ArrowDown') {
             e.preventDefault();
-            if (suggestions.length > 0) makeGuess(suggestions[0]);
+            setHighlighted((h) =>
+                suggestions.length === 0 ? -1 : (h + 1) % suggestions.length
+            );
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            setHighlighted((h) =>
+                suggestions.length === 0
+                    ? -1
+                    : (h - 1 + suggestions.length) % suggestions.length
+            );
+        } else if (e.key === 'Tab' || e.key === 'Enter') {
+            if (highlighted >= 0 && highlighted < suggestions.length) {
+                e.preventDefault();
+                makeGuess(suggestions[highlighted]);
+            } else if (e.key === 'Enter' && suggestions.length > 0) {
+                e.preventDefault();
+                makeGuess(suggestions[0]);
+            }
         }
     };
 
@@ -118,30 +151,11 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
             ? fuse.search(guess).map((r) => r.item).slice(0, 10)
             : [];
 
-    const showHint = wrongs.length >= 1;
-    const showDesc = wrongs.length >= 2;
-
-    const onPass = () => {
-        setLives((l) => l - 1);
-        pickNextSpell();
-    };
-
-    const wrapperRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
-        const handler = (e: MouseEvent) => {
-            if (
-                wrapperRef.current &&
-                !wrapperRef.current.contains(e.target as Node)
-            ) {
-                setGuess((g) => g);
-            }
-        };
-        document.addEventListener('mousedown', handler);
-        return () => document.removeEventListener('mousedown', handler);
-    }, []);
+        setHighlighted(-1);
+    }, [suggestions]);
 
     if (!spell) return null;
-
     return (
         <div
             style={{
@@ -155,70 +169,83 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                 height: '100vh',
                 padding: 16,
                 boxSizing: 'border-box',
+                position: 'relative',
             }}
         >
-            <div
-                style={{
-                    textAlign: 'center',
-                    maxWidth: 400,
-                    width: '100%',
-                    padding: 16,
-                }}
-            >
+            <div style={{ textAlign: 'center', maxWidth: 400, width: '100%' }}>
                 <h1 style={{ fontSize: 24, marginBottom: 8 }}>
                     Guess the ability name
                 </h1>
-                <h2 style={{ fontSize: 18, color: '#ccc', marginBottom: 16 }}>
+                <h2
+                    style={{
+                        fontSize: 18,
+                        color: '#ccc',
+                        marginBottom: 16,
+                    }}
+                >
                     Score: {score} · Lives: {lives}
                 </h2>
 
-                <img
-                    src={spell.iconUrl}
-                    alt={spell.names[0]}
-                    onContextMenu={e => e.preventDefault()}
-                    style={{
-                        width: 96,
-                        height: 96,
-                        objectFit: 'contain',
-                        marginBottom: 16,
-                        color: 'transparent',
-                        fontSize: 0,
-                    }}
-                />
-
-                {messages.map((msg) => (
-                    <div
-                        key={msg.id}
+                <div style={{ position: 'relative' }}>
+                    <img
+                        src={spell.iconUrl}
+                        alt={spell.names[0]}
+                        draggable={false}
+                        onContextMenu={(e) => e.preventDefault()}
                         style={{
-                            position: 'absolute',
-                            left: `calc(50% + ${msg.x}px)`,
-                            top: '50%',
-                            transform: 'translate(-50%, -50%)',
-                            pointerEvents: 'none',
-                            fontSize: 16,
-                            fontWeight: 'bold',
-                            color: msg.type === 'correct' ? '#4CAF50' : '#E74C3C',
-                            animation: 'floatUp 1s ease-out forwards',
+                            width: 96,
+                            height: 96,
+                            objectFit: 'contain',
+                            marginBottom: 16,
                         }}
-                    >
-                        {msg.text}
-                    </div>
-                ))}
+                    />
+
+                    {messages.map((msg) => (
+                        <div
+                            key={msg.id}
+                            className="floatUp"
+                            style={{
+                                position: 'absolute',
+                                left: `calc(50% + ${msg.x}px)`,
+                                top: '50%',
+                                transform: 'translate(-50%, -50%)',
+                                pointerEvents: 'none',
+                                fontSize: msg.type === 'reveal' ? 24 : 16,
+                                fontWeight: 'bold',
+                                color:
+                                    msg.type === 'correct'
+                                        ? '#4CAF50'
+                                        : msg.type === 'wrong'
+                                            ? '#E74C3C'
+                                            : '#FFA500',
+                                animation: 'floatUp 3s ease-out forwards',
+                            }}
+                        >
+                            {msg.text}
+                        </div>
+                    ))}
+                </div>
 
                 <div style={{ minHeight: 48, marginBottom: 16 }}>
-                    {showHint && (
+                    {wrongs.length >= 1 && (
                         <p style={{ color: '#bbb', fontSize: 16, margin: 0 }}>
                             <strong>Hint:</strong> {spell.hint}
                         </p>
                     )}
-                    {showDesc && (
-                        <p style={{ color: '#999', fontSize: 14, marginTop: 4 }}>
+                    {wrongs.length >= 2 && (
+                        <p
+                            style={{
+                                color: '#999',
+                                fontSize: 14,
+                                marginTop: 4,
+                            }}
+                        >
                             {spell.description}
                         </p>
                     )}
                 </div>
 
-                <div ref={wrapperRef} style={{ position: 'relative', marginBottom: 16 }}>
+                <div style={{ position: 'relative', marginBottom: 16 }}>
                     <input
                         type="text"
                         placeholder="Type to guess…"
@@ -256,7 +283,7 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                                 zIndex: 10,
                             }}
                         >
-                            {suggestions.map((n) => (
+                            {suggestions.map((n, i) => (
                                 <li
                                     key={n}
                                     onMouseDown={(e) => e.preventDefault()}
@@ -265,6 +292,8 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                                         padding: '8px',
                                         cursor: 'pointer',
                                         fontSize: 16,
+                                        backgroundColor:
+                                            i === highlighted ? 'rgba(255,255,255,0.1)' : 'transparent',
                                     }}
                                 >
                                     {n}
@@ -289,31 +318,17 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                 >
                     Pass (−1 life)
                 </button>
-
-                <div style={{ height: 60, overflowY: 'auto' }}>
-                    {wrongs.length > 0 && (
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                            {wrongs.map((g, i) => (
-                                <li key={i} style={{ color: '#e74c3c', fontSize: 14 }}>
-                                    {g}
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                </div>
             </div>
+
             <style>{`
-        @keyframes floatUp {
-          from {
-            opacity: 1;
-            transform: translate(-50%, -50%) translateY(0);
-          }
-          to {
-            opacity: 0;
-            transform: translate(-50%, -50%) translateY(-60px);
-          }
-        }
-      `}</style>
+   @keyframes floatUp { 
+     from { opacity: 1; transform: translate(-50%, -50%) translateY(0); }
+     to   { opacity: 0; transform: translate(-50%, -50%) translateY(-60px); }
+   }
+   .floatUp {
+     animation: floatUp 3s ease-out forwards;
+   }
+        `}</style>
         </div>
     );
 }
