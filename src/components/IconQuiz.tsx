@@ -165,6 +165,8 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                         height: 96,
                         objectFit: 'contain',
                         marginBottom: 16,
+                        color: 'transparent',
+                        fontSize: 0,
                     }}
                 />
 
