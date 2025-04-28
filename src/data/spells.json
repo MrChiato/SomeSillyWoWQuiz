@@ -443,11 +443,12 @@
     {
         "id": 198838,
         "names": [
-            "Earthen Wall Totem"
+            "Earthen Wall Totem",
+            "barkskin"
         ],
         "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_stoneclawtotem.jpg",
-        "hint": "Protects allies by absorbing damage.",
-        "description": "Summons an Earthen Wall Totem that reduces damage taken by party and raid members inside its area."
+        "hint": "Protects yourself from damage.",
+        "description": "Your skin becomes as tough as bark, reducing all damage you take by 20% and preventing damage from delaying your spellcasts. Lasts 8 sec."
     },
     {
         "id": 31850,
