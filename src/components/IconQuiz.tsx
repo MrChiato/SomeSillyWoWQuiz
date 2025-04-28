@@ -160,6 +160,8 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                 <img
                     src={spell.iconUrl}
                     alt={spell.names[0]}
+                    draggable={false}
+                    onContextMenu={e => e.preventDefault()}
                     style={{
                         width: 96,
                         height: 96,
