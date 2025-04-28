@@ -39,6 +39,19 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
 
     const [guess, setGuess] = useState('');
 
+    const [messages, setMessages] = useState<
+        Array<{ id: number; text: string; type: 'correct' | 'wrong'; x: number }>
+    >([]);
+
+    const spawnMessage = (text: string, type: 'correct' | 'wrong') => {
+        const id = Date.now() + Math.random();
+        const x = Math.random() * 80 - 40;
+        setMessages((m) => [...m, { id, text, type, x }]);
+        setTimeout(() => {
+            setMessages((m) => m.filter((msg) => msg.id !== id));
+        }, 1000);
+    };
+
     const pickNextSpell = () => {
         const remaining = allSpells.filter((s) => !usedIds.has(s.id));
         if (remaining.length === 0) {
@@ -79,9 +92,11 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
             (n) => n.toLowerCase() === value.toLowerCase()
         );
         if (match) {
+            spawnMessage('Correct', 'correct');
             setScore((s) => s + 1);
             pickNextSpell();
         } else {
+            spawnMessage('Wrong', 'wrong');
             setWrongs((ws) => [...ws, value]);
             setLives((l) => l - 1);
         }
@@ -170,6 +185,25 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                         fontSize: 0,
                     }}
                 />
+
+                {messages.map((msg) => (
+                    <div
+                        key={msg.id}
+                        style={{
+                            position: 'absolute',
+                            left: `calc(50% + ${msg.x}px)`,
+                            top: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            pointerEvents: 'none',
+                            fontSize: 16,
+                            fontWeight: 'bold',
+                            color: msg.type === 'correct' ? '#4CAF50' : '#E74C3C',
+                            animation: 'floatUp 1s ease-out forwards',
+                        }}
+                    >
+                        {msg.text}
+                    </div>
+                ))}
 
                 <div style={{ minHeight: 48, marginBottom: 16 }}>
                     {showHint && (
@@ -268,6 +302,18 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                     )}
                 </div>
             </div>
+            <style>{`
+        @keyframes floatUp {
+          from {
+            opacity: 1;
+            transform: translate(-50%, -50%) translateY(0);
+          }
+          to {
+            opacity: 0;
+            transform: translate(-50%, -50%) translateY(-60px);
+          }
+        }
+      `}</style>
         </div>
     );
 }
