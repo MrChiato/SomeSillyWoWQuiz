@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-import IconQuizWithHints from './components/IconQuizWithHints';
-
-export default function App() {
-  return (
-    <div style={{ margin: '2rem auto', fontFamily: 'sans-serif' }}>
-      <IconQuizWithHints />
-=======
 import { useState } from 'react';
 import IconQuiz from './components/IconQuiz';
 import Leaderboard from './components/Leaderboard';
@@ -86,7 +78,6 @@ export default function App() {
       </div>
 
       <NameModal isOpen={modalOpen} onSubmit={handleModalSubmit} />
->>>>>>> master
     </div>
   );
 }
