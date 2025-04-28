@@ -11,6 +11,10 @@
     "generate": "node scripts/generateSpells.cjs"
   },
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "@supabase/supabase-js": "^2.49.4",
+>>>>>>> master
     "axios": "^1.9.0",
     "dotenv": "^16.5.0",
     "fuse.js": "^7.1.0",
