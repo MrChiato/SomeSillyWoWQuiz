@@ -649,15 +649,6 @@
         "description": "Thrusts with your off-hand weapon to apply an instant poison effect."
     },
     {
-        "id": 60123,
-        "names": [
-            "Picnic Basket"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/inv_crate_06.jpg",
-        "hint": "Place a relaxing picnic for friends.",
-        "description": "Summons a cozy picnic setup. Friends can click it to sit and enjoy food together."
-    },
-    {
         "id": 165669,
         "names": [
             "Hallowed Wand - Skeleton"
