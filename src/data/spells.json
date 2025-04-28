@@ -104,15 +104,6 @@
         "description": "The caster lets out a psychic scream, causing enemies within 8 yards to flee in fear for 8 seconds."
     },
     {
-        "id": 23881,
-        "names": [
-            "Bloodthirst"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_bloodlust.jpg",
-        "hint": "Attacks and heals.",
-        "description": "Instantly attack the target, dealing physical damage and restoring a portion of your health."
-    },
-    {
         "id": 34433,
         "names": [
             "Shadowfiend"
@@ -243,19 +234,11 @@
         "id": 32182,
         "names": [
             "Heroism",
-            "Bloodlust"
+            "Bloodlust",
+            "Bloodthirst"
         ],
         "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_bloodlust.jpg",
         "hint": "Massive haste buff for your group.",
-        "description": "Increases haste by 30% for all party and raid members for 40 seconds."
-    },
-    {
-        "id": 2825,
-        "names": [
-            "Bloodlust"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_bloodlust.jpg",
-        "hint": "Increases haste dramatically.",
         "description": "Increases haste by 30% for all party and raid members for 40 seconds."
     },
     {
