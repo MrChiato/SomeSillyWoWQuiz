@@ -1,0 +1,738 @@
+[
+    {
+        "id": 100,
+        "names": [
+            "Charge"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_warrior_charge.jpg",
+        "hint": "A quick dash to your target.",
+        "description": "Charge at the enemy, stunning them for 1.5 seconds and generating 1 Rage."
+    },
+    {
+        "id": 12294,
+        "names": [
+            "Mortal Strike",
+            "Savage Blow"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_warrior_savageblow.jpg",
+        "hint": "Reduces healing received.",
+        "description": "A vicious attack that deals damage and wounds the target, reducing all healing received by 50% for 10 sec."
+    },
+    {
+        "id": 133,
+        "names": [
+            "Fireball",
+            "Fire Ball"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_fire_flamebolt.jpg",
+        "hint": "Burns over time.",
+        "description": "Hurl a fiery ball that causes Fire damage and applies a burning DoT for 4 sec."
+    },
+    {
+        "id": 116,
+        "names": [
+            "Frostbolt",
+            "Frost Bolt"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_frost_frostbolt02.jpg",
+        "hint": "Slows movement.",
+        "description": "Launches a bolt of frost at the enemy, dealing Frost damage and reducing movement speed by 30% for 4 sec."
+    },
+    {
+        "id": 853,
+        "names": [
+            "Hammer of Justice",
+            "HoJ"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_holy_sealofmight.jpg",
+        "hint": "Stuns the target.",
+        "description": "Stuns the target for 6 seconds."
+    },
+    {
+        "id": 172,
+        "names": [
+            "Corruption"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_shadow_abominationexplosion.jpg",
+        "hint": "Applies a shadowy DoT.",
+        "description": "Corrupts the target, causing Shadow damage over 14 seconds."
+    },
+    {
+        "id": 585,
+        "names": [
+            "Smite"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_holy_holysmite.jpg",
+        "hint": "A basic holy attack.",
+        "description": "Smites an enemy for Holy damage."
+    },
+    {
+        "id": 686,
+        "names": [
+            "Shadow Bolt"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_shadow_shadowbolt.jpg",
+        "hint": "Deals direct Shadow damage.",
+        "description": "Sends a bolt of dark magic at an enemy, causing Shadow damage."
+    },
+    {
+        "id": 403,
+        "names": [
+            "Lightning Bolt",
+            "Arcane Power"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_lightning.jpg",
+        "hint": "Nature damage strike.",
+        "description": "Casts a bolt of lightning at the target, dealing Nature damage."
+    },
+    {
+        "id": 1953,
+        "names": [
+            "Blink"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_blink.jpg",
+        "hint": "Instant teleport forward.",
+        "description": "Teleports the caster 20 yards forward, freeing them from stuns and bonds."
+    },
+    {
+        "id": 8122,
+        "names": [
+            "Psychic Scream"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_shadow_psychicscream.jpg",
+        "hint": "Fears nearby enemies.",
+        "description": "The caster lets out a psychic scream, causing enemies within 8 yards to flee in fear for 8 seconds."
+    },
+    {
+        "id": 23881,
+        "names": [
+            "Bloodthirst"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_bloodlust.jpg",
+        "hint": "Attacks and heals.",
+        "description": "Instantly attack the target, dealing physical damage and restoring a portion of your health."
+    },
+    {
+        "id": 34433,
+        "names": [
+            "Shadowfiend"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_shadow_shadowfiend.jpg",
+        "hint": "Summons a mana-restoring fiend.",
+        "description": "Summons a shadowy fiend to attack your enemy, restoring mana to you as it deals damage."
+    },
+    {
+        "id": 8092,
+        "names": [
+            "Mind Blast"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_shadow_unholyfrenzy.jpg",
+        "hint": "Direct psychic damage.",
+        "description": "Blasts the target's mind for heavy Shadow damage."
+    },
+    {
+        "id": 36554,
+        "names": [
+            "Shadowstep"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_rogue_shadowstep.jpg",
+        "hint": "Teleports behind your enemy.",
+        "description": "Attempts to step through the shadows and reappear behind your enemy, increasing movement speed for a short time."
+    },
+    {
+        "id": 2983,
+        "names": [
+            "Sprint"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_rogue_sprint.jpg",
+        "hint": "Run much faster.",
+        "description": "Increases movement speed by 70% for 8 seconds."
+    },
+    {
+        "id": 1856,
+        "names": [
+            "Vanish"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_vanish.jpg",
+        "hint": "Enter stealth immediately.",
+        "description": "Allows the rogue to vanish from sight, entering stealth even while in combat."
+    },
+    {
+        "id": 30283,
+        "names": [
+            "Shadowfury"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_shadow_shadowfury.jpg",
+        "hint": "AoE stun.",
+        "description": "Calls down a bolt of shadow energy, stunning all enemies within the area for 3 seconds."
+    },
+    {
+        "id": 206803,
+        "names": [
+            "Rain from Above"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_demonhunter_rainfromabove.jpg",
+        "hint": "Leap into the air and bombard enemies.",
+        "description": "Launch into the air and bombard enemies with fel energy."
+    },
+    {
+        "id": 58984,
+        "names": [
+            "Shadowmeld"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_ambush.jpg",
+        "hint": "Enter stealth out of combat.",
+        "description": "Activate to slip into the shadows, reducing the chance for enemies to detect your presence."
+    },
+    {
+        "id": 19506,
+        "names": [
+            "Trueshot Aura"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_trueshot.jpg",
+        "hint": "Increases ranged attack power.",
+        "description": "Increases the attack power of party and raid members."
+    },
+    {
+        "id": 693,
+        "names": [
+            "Create Healthstone"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/warlock_healthstone.jpg",
+        "hint": "Create a healing stone.",
+        "description": "Creates a Healthstone that can be used to instantly restore health."
+    },
+    {
+        "id": 10059,
+        "names": [
+            "Portal: Stormwind"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portalstormwind.jpg",
+        "hint": "Opens a portal to Stormwind.",
+        "description": "Creates a portal, teleporting group members that use it to Stormwind."
+    },
+    {
+        "id": 50613,
+        "names": [
+            "Arcane Barrage"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_mage_arcanebarrage.jpg",
+        "hint": "Unleashes stored arcane energy.",
+        "description": "Launches all stored Arcane Charges at the enemy, dealing Arcane damage."
+    },
+    {
+        "id": 42292,
+        "names": [
+            "Medallion of the Alliance",
+            "PvP Trinket"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/inv_jewelry_trinketpvp_01.jpg",
+        "hint": "Breaks all movement impairing effects.",
+        "description": "Removes all movement impairing effects and all effects that cause loss of control of your character."
+    },
+    {
+        "id": 51490,
+        "names": [
+            "Thunderstorm"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_lightning.jpg",
+        "hint": "Blasts enemies away with nature.",
+        "description": "Calls down a bolt of lightning, knocking back enemies within 10 yards and dealing Nature damage."
+    },
+    {
+        "id": 32182,
+        "names": [
+            "Heroism"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_bloodlust.jpg",
+        "hint": "Massive haste buff for your group.",
+        "description": "Increases haste by 30% for all party and raid members for 40 seconds."
+    },
+    {
+        "id": 2825,
+        "names": [
+            "Bloodlust"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_bloodlust.jpg",
+        "hint": "Increases haste dramatically.",
+        "description": "Increases haste by 30% for all party and raid members for 40 seconds."
+    },
+    {
+        "id": 12051,
+        "names": [
+            "Evocation"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_purge.jpg",
+        "hint": "Regenerate mana quickly.",
+        "description": "Channeling mana regeneration, restoring a large amount of mana over 6 seconds."
+    },
+    {
+        "id": 47541,
+        "names": [
+            "Death Coil"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_shadow_deathcoil.jpg",
+        "hint": "Deals damage and heals the caster.",
+        "description": "Fires a blast of unholy energy at the target, causing Shadow damage and healing you for 50% of the damage dealt."
+    },
+    {
+        "id": 47568,
+        "names": [
+            "Empower Rune Weapon"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/inv_sword_62.jpg",
+        "hint": "Instantly refreshes runes.",
+        "description": "Empowers your rune weapon, instantly generating full runes and 25 Runic Power."
+    },
+    {
+        "id": 104773,
+        "names": [
+            "Unending Resolve"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_shadow_demonictactics.jpg",
+        "hint": "Massive damage reduction.",
+        "description": "Increases damage reduction by 40% and grants immunity to interrupts and silence effects for 8 seconds."
+    },
+    {
+        "id": 36554,
+        "names": [
+            "Shadowstep"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_rogue_shadowstep.jpg",
+        "hint": "Teleport behind your target.",
+        "description": "Attempts to step through the shadows and appear behind your enemy, increasing movement speed for 2 sec."
+    },
+    {
+        "id": 212653,
+        "names": [
+            "Shimmer",
+            "Mass Dispel"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_arcane_massdispel.jpg",
+        "hint": "Instant teleport.",
+        "description": "Teleports the caster forward 20 yards, freeing them from all stuns and bonds."
+    },
+    {
+        "id": 132578,
+        "names": [
+            "Invoke Yu'lon, the Jade Serpent"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_monk_chibrew.jpg",
+        "hint": "Summon Yu'lon to heal allies.",
+        "description": "Summons an image of Yu'lon that breathes healing mist onto injured allies."
+    },
+    {
+        "id": 193526,
+        "names": [
+            "Trueshot"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_hunter_focusedaim.jpg",
+        "hint": "Boosts critical strike and haste.",
+        "description": "Increases your haste and critical strike chance by 20% for 15 seconds."
+    },
+    {
+        "id": 51052,
+        "names": [
+            "Anti-Magic Zone"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_deathknight_antimagiczone.jpg",
+        "hint": "Protects allies from magic.",
+        "description": "Places a shield that reduces magic damage taken by party and raid members by 20%."
+    },
+    {
+        "id": 85384,
+        "names": [
+            "Raging Blow"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_warrior_ragingblow.jpg",
+        "hint": "A strong physical blow.",
+        "description": "A furious blow that deals Physical damage to your target."
+    },
+    {
+        "id": 122470,
+        "names": [
+            "Touch of Karma"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_monk_touchofkarma.jpg",
+        "hint": "Redirects damage you take.",
+        "description": "Redirects all damage you take to the attacker for 10 seconds."
+    },
+    {
+        "id": 116680,
+        "names": [
+            "Thunder Focus Tea"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_lightning.jpg",
+        "hint": "Empowers your next spell.",
+        "description": "Drink a rejuvenating brew, causing your next spell to have increased effectiveness."
+    },
+    {
+        "id": 190319,
+        "names": [
+            "Combustion"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_fire_sealoffire.jpg",
+        "hint": "Massively increases critical strike chance.",
+        "description": "Grants 100% increased critical strike chance for your Fire spells for 10 seconds."
+    },
+    {
+        "id": 190336,
+        "names": [
+            "Conjure Refreshment"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_manaamulet.jpg",
+        "hint": "Creates food and drink for allies.",
+        "description": "Conjures a table of refreshments that restores health and mana."
+    },
+    {
+        "id": 324,
+        "names": [
+            "Lightning Shield"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_lightningshield.jpg",
+        "hint": "Protective shield that shocks attackers.",
+        "description": "Surround yourself with lightning, dealing damage to attackers when hit."
+    },
+    {
+        "id": 45438,
+        "names": [
+            "Ice Block"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_frost_frost.jpg",
+        "hint": "Become immune to all damage.",
+        "description": "Encases you in a block of ice, protecting you from all attacks and spells for 10 seconds."
+    },
+    {
+        "id": 2139,
+        "names": [
+            "Counterspell"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_frost_iceshock.jpg",
+        "hint": "Interrupts the enemy's spellcasting.",
+        "description": "Counters the enemy's spell, preventing any spell from that school from being cast for 6 seconds."
+    },
+    {
+        "id": 32546,
+        "names": [
+            "Binding Heal"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_holy_blindingheal.jpg",
+        "hint": "Heals yourself and an ally.",
+        "description": "Heals a friendly target and the caster at the same time."
+    },
+    {
+        "id": 115098,
+        "names": [
+            "Chi Wave"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_monk_chiwave.jpg",
+        "hint": "Bounces healing and damage.",
+        "description": "A wave of Chi energy bounces between allies and enemies, healing allies and damaging enemies."
+    },
+    {
+        "id": 137639,
+        "names": [
+            "Storm, Earth, and Fire"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/monk_ability_stormearthandfire.jpg",
+        "hint": "Creates spirit clones to attack enemies.",
+        "description": "Split into elemental spirits to attack multiple enemies simultaneously."
+    },
+    {
+        "id": 102342,
+        "names": [
+            "Ironbark"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_druid_ironbark.jpg",
+        "hint": "Protects an ally from harm.",
+        "description": "The target's damage taken is reduced by 20% for 12 seconds."
+    },
+    {
+        "id": 740,
+        "names": [
+            "Tranquility"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_tranquility.jpg",
+        "hint": "Powerful healing over time to all nearby allies.",
+        "description": "Heals all nearby group members every 2 seconds for 8 seconds."
+    },
+    {
+        "id": 198838,
+        "names": [
+            "Earthen Wall Totem"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_stoneclawtotem.jpg",
+        "hint": "Protects allies by absorbing damage.",
+        "description": "Summons an Earthen Wall Totem that reduces damage taken by party and raid members inside its area."
+    },
+    {
+        "id": 31850,
+        "names": [
+            "Ardent Defender"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_holy_ardentdefender.jpg",
+        "hint": "Absorbs fatal damage and heals you.",
+        "description": "Reduces all damage taken by 20%, and if you fall below 20% health, you will instantly heal for 50% of maximum health."
+    },
+    {
+        "id": 198103,
+        "names": [
+            "Earth Elemental"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_earthelemental_totem.jpg",
+        "hint": "Summons an elemental ally to tank.",
+        "description": "Calls forth an Earth Elemental to protect you and your allies for a short time."
+    },
+    {
+        "id": 281400,
+        "names": [
+            "Teleport: THE MOTHERLODE!!"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portalmothership.jpg",
+        "hint": "Teleport to the MOTHERLODE!! dungeon.",
+        "description": "Teleports the caster to THE MOTHERLODE!! dungeon entrance."
+    },
+    {
+        "id": 53142,
+        "names": [
+            "Portal: Dalaran - Northrend"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portaldalaran.jpg",
+        "hint": "Opens a portal to Dalaran in Northrend.",
+        "description": "Creates a portal, teleporting group members to Dalaran in Northrend."
+    },
+    {
+        "id": 344597,
+        "names": [
+            "Teleport: Oribos"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_animarevendreth_buff.jpg",
+        "hint": "Teleport to the capital of the Shadowlands.",
+        "description": "Teleports the caster to Oribos, the Eternal City."
+    },
+    {
+        "id": 8690,
+        "names": [
+            "Hearthstone"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/inv_misc_rune_01.jpg",
+        "hint": "Return to your home location.",
+        "description": "Teleports the caster to their home location."
+    },
+    {
+        "id": 60320,
+        "names": [
+            "Scroll of Recall"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/inv_scroll_08.jpg",
+        "hint": "Teleport back to your hearthstone location.",
+        "description": "Returns you to your hearthstone location. Slight chance of failure."
+    },
+    {
+        "id": 410078,
+        "names": [
+            "Dreamwalk"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_druid_dreamwalk.jpg",
+        "hint": "Teleport to the Dreamgrove.",
+        "description": "Teleports you to the Dreamgrove in Val'sharah."
+    },
+    {
+        "id": 373861,
+        "names": [
+            "Dracthyr Soar"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_evoker_soar.jpg",
+        "hint": "Fly like a dragon across the skies.",
+        "description": "Launch yourself into the air and soar at high speeds, similar to dragonriding."
+    },
+    {
+        "id": 390386,
+        "names": [
+            "Time Spiral"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_evoker_timespiral.jpg",
+        "hint": "Resets major movement cooldowns.",
+        "description": "Allows allies to cast a major movement ability that is normally on cooldown."
+    },
+    {
+        "id": 410065,
+        "names": [
+            "Waking Portal: Valdrakken"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_evoker_wakingdream.jpg",
+        "hint": "Creates a portal to Valdrakken.",
+        "description": "Creates a portal that teleports party members to Valdrakken in the Dragon Isles."
+    },
+    {
+        "id": 161691,
+        "names": [
+            "Teleport: Warspear"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portalwarspear.jpg",
+        "hint": "Teleport to Warspear, Ashran.",
+        "description": "Teleports the caster to Warspear, the Horde base on Ashran."
+    },
+    {
+        "id": 161792,
+        "names": [
+            "Teleport: Stormshield"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portalstormshield.jpg",
+        "hint": "Teleport to Stormshield, Ashran.",
+        "description": "Teleports the caster to Stormshield, the Alliance base on Ashran."
+    },
+    {
+        "id": 224869,
+        "names": [
+            "Toy Train Set"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/inv_misc_enggizmos_17.jpg",
+        "hint": "Summons a toy train to annoy people.",
+        "description": "Place a toy train set that attracts the attention of nearby players and causes them to /train emote."
+    },
+    {
+        "id": 183601,
+        "names": [
+            "Inflatable Thunderfury, Blessed Blade of the Windseeker"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/inv_sword_39.jpg",
+        "hint": "A silly version of Thunderfury.",
+        "description": "Summons an inflatable version of the legendary Thunderfury for party fun."
+    },
+    {
+        "id": 122,
+        "names": [
+            "Frost Nova"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_frost_frostnova.jpg",
+        "hint": "Freezes enemies in place.",
+        "description": "Blasts enemies near the caster for Frost damage and freezes them in place for 8 seconds."
+    },
+    {
+        "id": 118,
+        "names": [
+            "Polymorph"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_polymorph.jpg",
+        "hint": "Turns the enemy into a sheep.",
+        "description": "Transforms the enemy into a sheep, incapacitating them for 50 seconds. Damage will cancel the effect."
+    },
+    {
+        "id": 61295,
+        "names": [
+            "Riptide"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_riptide.jpg",
+        "hint": "Instant heal and a heal over time.",
+        "description": "Heals a friendly target instantly and applies a heal over time effect."
+    },
+    {
+        "id": 11426,
+        "names": [
+            "Ice Barrier"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_ice_lament.jpg",
+        "hint": "Shields you with ice.",
+        "description": "Shields you with ice, absorbing damage for 1 minute."
+    },
+    {
+        "id": 11366,
+        "names": [
+            "Pyroblast"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_fire_fireball02.jpg",
+        "hint": "A huge, fiery blast.",
+        "description": "Hurls an immense fiery boulder that causes massive Fire damage."
+    },
+    {
+        "id": 2823,
+        "names": [
+            "Deadly Poison"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_rogue_dualweild.jpg",
+        "hint": "Coats your weapon to deal extra damage over time.",
+        "description": "Coats your weapon with poison that has a chance to inflict extra Nature damage."
+    },
+    {
+        "id": 5938,
+        "names": [
+            "Shiv"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_rogue_shiv.jpg",
+        "hint": "Instantly applies poison.",
+        "description": "Thrusts with your off-hand weapon to apply an instant poison effect."
+    },
+    {
+        "id": 60123,
+        "names": [
+            "Picnic Basket"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/inv_crate_06.jpg",
+        "hint": "Place a relaxing picnic for friends.",
+        "description": "Summons a cozy picnic setup. Friends can click it to sit and enjoy food together."
+    },
+    {
+        "id": 165669,
+        "names": [
+            "Hallowed Wand - Skeleton"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/inv_misc_bone_elfskull_01.jpg",
+        "hint": "Turns your friends into a skeleton!",
+        "description": "Transforms a friendly target into a spooky skeleton for fun."
+    },
+    {
+        "id": 165670,
+        "names": [
+            "Hallowed Wand - Pirate"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/inv_boots_cloth_05.jpg",
+        "hint": "Turns your friends into a pirate!",
+        "description": "Transforms a friendly target into a pirate costume temporarily."
+    },
+    {
+        "id": 83968,
+        "names": [
+            "Mass Resurrection"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_priest_massresurrection.jpg",
+        "hint": "Revives all dead party members.",
+        "description": "Brings all dead party and raid members back to life with 35% health and mana."
+    },
+    {
+        "id": 32375,
+        "names": [
+            "Mass Dispel"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_massdispel.jpg",
+        "hint": "Dispels magic in an area.",
+        "description": "Removes harmful magic effects from allies and beneficial magic effects from enemies in an area."
+    },
+    {
+        "id": 18562,
+        "names": [
+            "Swiftmend"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/inv_relics_idolofrejuvenation.jpg",
+        "hint": "Consume a heal over time effect for an instant heal.",
+        "description": "Consumes a heal-over-time effect to instantly heal the target."
+    },
+    {
+        "id": 34477,
+        "names": [
+            "Misdirection"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_hunter_misdirection.jpg",
+        "hint": "Redirect your threat to your tank.",
+        "description": "Redirects all threat you cause to a friendly target for 8 seconds."
+    },
+    {
+        "id": 78674,
+        "names": [
+            "Starsurge"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_starfire.jpg",
+        "hint": "Blast your enemy with lunar and solar energy.",
+        "description": "Launch a surge of stellar energies at the target, dealing massive Astral damage."
+    }
+]
