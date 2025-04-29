@@ -3,12 +3,12 @@ import {
     useEffect,
     ChangeEvent,
     KeyboardEvent,
+    useRef,
 } from 'react';
 import Fuse from 'fuse.js';
 import spells from '../data/spells.json';
 
 export type Spell = {
-    id: number;
     names: string[];
     iconUrl: string;
     hint: string;
@@ -27,21 +27,70 @@ const fuse = new Fuse(allNames, {
     distance: 100,
 });
 
-type IconQuizProps = { onGameOver: (finalScore: number) => void };
+type IconQuizProps = {
+    onGameOver: (finalScore: number, mode: 'easy' | 'medium' | 'hard') => void
+};
 
 export default function IconQuiz({ onGameOver }: IconQuizProps) {
     const [spell, setSpell] = useState<Spell | null>(null);
     const [wrongs, setWrongs] = useState<string[]>([]);
-    const [usedIds, setUsedIds] = useState<Set<number>>(new Set());
+    const [usedIcons, setUsedIcons] = useState<Set<string>>(new Set());
     const [score, setScore] = useState(0);
     const [lives, setLives] = useState(10);
     const [guess, setGuess] = useState('');
 
+    const [availNames, setAvailNames] = useState<string[]>(allNames);
+
     const [highlighted, setHighlighted] = useState(-1);
+
+    const questionCount = usedIcons.size;
+    const [lockMode, setLockMode] = useState<'easy' | 'medium' | 'hard' | null>(null);
+    const [mode, setMode] = useState<'easy' | 'medium' | 'hard'>('easy');
+    const m = lockMode ?? mode;
+    const lockIt = () => {
+        if (!lockMode) setLockMode(mode);
+    };
+    const weightConfigs: Record<'easy' | 'medium' | 'hard', Record<number, [number, number]>> = {
+        easy: {
+            1: [0, 0],
+            2: [5, 12],
+            3: [12, 18],
+            4: [18, 24],
+            5: [24, 30],
+        },
+        medium: {
+            1: [0, 0],
+            2: [0, 5],
+            3: [5, 10],
+            4: [10, 15],
+            5: [15, 20],
+        },
+        hard: {
+            1: [0, 5],
+            2: [0, 8],
+            3: [0, 0],
+            4: [2, 6],
+            5: [6, 12],
+        },
+    };
+
+    function weightFor(d: number) {
+        const [start, end] = weightConfigs[m][d];
+        if (start === 0 && end === 0) return 1;
+        if (start < end) {
+            if (questionCount <= start) return 0;
+            if (questionCount >= end) return 1;
+            return (questionCount - start) / (end - start);
+        }
+        if (questionCount <= end) return 1;
+        if (questionCount >= start) return 0;
+        return 1 - (questionCount - end) / (start - end);
+    }
 
     const [messages, setMessages] = useState<
         Array<{ id: number; text: string; type: 'correct' | 'wrong' | 'reveal'; x: number }>
     >([]);
+
 
     const spawnMessage = (
         text: string,
@@ -55,27 +104,40 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
         }, 3000);
     };
 
+    const listRef = useRef<HTMLUListElement>(null);
+    useEffect(() => {
+        if (highlighted >= 0 && listRef.current) {
+            const el = listRef.current.children[highlighted] as HTMLElement;
+            if (el) el.scrollIntoView({ block: 'nearest' });
+        }
+    }, [highlighted]);
+
+
     const pickNextSpell = () => {
-        const remaining = allSpells.filter((s) => !usedIds.has(s.id));
+        const remaining = allSpells.filter((s) => !usedIcons.has(s.iconUrl));
         if (remaining.length === 0) {
-            onGameOver(score);
+            onGameOver(score, lockMode!);
             return;
         }
 
-        let pool: Spell[];
-        if (score < 5) {
-            pool = remaining.filter((s) => s.difficulty === 1);
-        } else if (score < 10) {
-            pool = remaining.filter((s) => s.difficulty <= 2);
-        } else {
-            pool = remaining;
+        const weights = remaining.map((s) => weightFor(s.difficulty));
+        const sum = weights.reduce((a, b) => a + b, 0);
+        let r = Math.random() * sum;
+        let cum = 0;
+        let choice = remaining[0];
+
+        for (let i = 0; i < remaining.length; i++) {
+            cum += weights[i];
+            if (r <= cum) {
+                choice = remaining[i];
+                break;
+            }
         }
 
-        const next = pool[Math.floor(Math.random() * pool.length)];
-
-        setSpell(next);
+        setSpell(choice);
         setWrongs([]);
-        setUsedIds((prev) => new Set(prev).add(next.id));
+        setUsedIcons((prev) => new Set(prev).add(choice.iconUrl));
+        setAvailNames(allNames);
         setGuess('');
     };
 
@@ -92,11 +154,12 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
     useEffect(() => {
         if (lives <= 0 && spell) {
             spawnMessage(spell.names[0], 'wrong');
-            onGameOver(score);
+            onGameOver(score, lockMode!);
         }
     }, [lives]);
 
     const makeGuess = (value: string) => {
+        if (!lockMode) lockIt();
         if (!spell) return;
         const match = spell.names.find(
             (n) => n.toLowerCase() === value.toLowerCase()
@@ -109,11 +172,13 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
             spawnMessage(value, 'wrong');
             setWrongs((ws) => [...ws, value]);
             setLives((l) => l - 1);
+            setAvailNames((a) => a.filter((n) => n !== value));
         }
         setGuess('');
     };
 
     const onPass = () => {
+        if (!lockMode) lockIt();
         if (!spell) return;
         setLives((l) => l - 1);
         spawnMessage(spell.names[0], 'reveal');
@@ -123,7 +188,7 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
     const onInputChange = (e: ChangeEvent<HTMLInputElement>) =>
         setGuess(e.target.value);
     const onKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'ArrowDown') {
+        if (e.key === 'ArrowDown' || e.key === 'Tab') {
             e.preventDefault();
             setHighlighted((h) =>
                 suggestions.length === 0 ? -1 : (h + 1) % suggestions.length
@@ -135,25 +200,28 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                     ? -1
                     : (h - 1 + suggestions.length) % suggestions.length
             );
-        } else if (e.key === 'Tab' || e.key === 'Enter') {
+        } else if (e.key === 'Enter') {
+            e.preventDefault();
             if (highlighted >= 0 && highlighted < suggestions.length) {
-                e.preventDefault();
                 makeGuess(suggestions[highlighted]);
-            } else if (e.key === 'Enter' && suggestions.length > 0) {
-                e.preventDefault();
+            } else if (suggestions.length > 0) {
                 makeGuess(suggestions[0]);
             }
         }
     };
 
-    const suggestions =
+    const rawMatches =
         guess.length >= 3
-            ? fuse.search(guess).map((r) => r.item).slice(0, 10)
+            ? fuse.search(guess).map((r) => r.item)
             : [];
+
+    const suggestions = rawMatches
+        .filter((n) => availNames.includes(n))
+        .slice(0, 10);
 
     useEffect(() => {
         setHighlighted(-1);
-    }, [suggestions]);
+    }, [suggestions.length]);
 
     if (!spell) return null;
     return (
@@ -176,6 +244,27 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                 <h1 style={{ fontSize: 24, marginBottom: 8 }}>
                     Guess the ability name
                 </h1>
+                <div style={{ marginBottom: 16 }}>
+                    {(['easy', 'medium', 'hard'] as const).map((m) => (
+                        <button
+                            key={m}
+                            onClick={() => lockMode || setMode(m)}
+                            disabled={!!lockMode}
+                            style={{
+                                padding: '6px 12px',
+                                margin: '0 4px',
+                                borderRadius: 4,
+                                border: m === mode ? '2px solid #FFC946' : '1px solid #444',
+                                backgroundColor: m === mode ? '#444' : '#222',
+                                color: '#eee',
+                                cursor: lockMode ? 'not-allowed' : 'pointer',
+                                opacity: lockMode && m !== lockMode ? 0.5 : 1,
+                            }}
+                        >
+                            {m.charAt(0).toUpperCase() + m.slice(1)}
+                        </button>
+                    ))}
+                </div>
                 <h2
                     style={{
                         fontSize: 18,
@@ -266,6 +355,7 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                     />
                     {suggestions.length > 0 && (
                         <ul
+                            ref={listRef}
                             style={{
                                 position: 'absolute',
                                 top: '100%',

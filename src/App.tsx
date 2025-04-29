@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import IconQuiz from './components/IconQuiz';
-import Leaderboard from './components/Leaderboard';
+import Leaderboards from './components/Leaderboard';
 import NameModal from './components/NameModal';
 import { submitScore } from './lib/supabase';
 
@@ -9,34 +9,41 @@ export default function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const [pendingScore, setPendingScore] = useState(0);
   const [quizKey, setQuizKey] = useState(0);
+  const [quizMode, setQuizMode] = useState<'easy' | 'medium' | 'hard'>('easy');
+
+  const [gameOverInfo, setGameOverInfo] = useState<{
+    finalScore: number;
+    bestScore: number;
+    mode: 'easy' | 'medium' | 'hard';
+  } | null>(null);
 
   const bumpQuizKey = () => setQuizKey((k) => k + 1);
 
-  const [localHighScore, setLocalHighScore] = useState(() => {
-    const v = localStorage.getItem('wowQuizHighScore');
-    return v ? parseInt(v, 10) : 0;
-  });
-  const [localName, setLocalName] = useState(() => {
-    return localStorage.getItem('wowQuizPlayerName') || '';
-  });
-
-  const handleGameOver = (finalScore: number) => {
-    if (finalScore > localHighScore) {
+  const handleGameOver = (
+    finalScore: number,
+    mode: 'easy' | 'medium' | 'hard'
+  ) => {
+    setQuizMode(mode);
+    const keyScore = `wowQuizHighScore_${mode}`;
+    const stored = parseInt(localStorage.getItem(keyScore) || '0', 10);
+    if (finalScore > stored) {
       setPendingScore(finalScore);
       setModalOpen(true);
     } else {
-      setView('leaderboard');
+      setGameOverInfo({ finalScore, bestScore: stored, mode });
     }
   };
 
   const handleModalSubmit = (name: string) => {
-    localStorage.setItem('wowQuizHighScore', pendingScore.toString());
-    localStorage.setItem('wowQuizPlayerName', name);
+    const keyScore = `wowQuizHighScore_${quizMode}`;
+    const keyName = `wowQuizPlayerName_${quizMode}`;
 
-    setLocalHighScore(pendingScore);
-    setLocalName(name);
+    localStorage.setItem(keyScore, pendingScore.toString());
+    localStorage.setItem(keyName, name);
 
-    submitScore(name, pendingScore).catch(console.error);
+    const clean = name.trim().slice(0, 20);
+    if (!clean) return;
+    submitScore(clean, pendingScore, quizMode).catch(console.error);
 
     setModalOpen(false);
     setView('leaderboard');
@@ -85,16 +92,64 @@ export default function App() {
       }}>
         {view === 'quiz'
           ? <IconQuiz key={quizKey} onGameOver={handleGameOver} />
-          : <Leaderboard />
+          : <Leaderboards />
         }
       </div>
 
       <NameModal
         isOpen={modalOpen}
-        initialName={localName}
-        title="🎉 New High Score!"
+        initialName={localStorage.getItem(`wowQuizPlayerName_${quizMode}`) || ''}
+        title="🎉 New High Score! 🎉"
         onSubmit={handleModalSubmit}
       />
+      {gameOverInfo && (
+        <div
+          style={{
+            position: 'fixed', top: 0, left: 0,
+            width: '100vw', height: '100vh',
+            backgroundColor: 'rgba(0,0,0,0.7)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            zIndex: 1000,
+          }}
+        >
+          <div style={{
+            backgroundColor: '#1e1e1e',
+            color: '#eee',
+            padding: '2rem',
+            borderRadius: 8,
+            width: '90%',
+            maxWidth: 360,
+            textAlign: 'center',
+          }}>
+            <h2 style={{ marginBottom: '1rem' }}>Game Over</h2>
+            <p style={{ margin: '0.5rem 0' }}>
+              Final score: <strong>{gameOverInfo.finalScore}</strong>
+            </p>
+            <p style={{ margin: '0.5rem 0' }}>
+              Best for <em>{gameOverInfo.mode}</em>: <strong>{gameOverInfo.bestScore}</strong>
+            </p>
+            <button
+              onClick={() => {
+                setGameOverInfo(null);
+                bumpQuizKey();
+                setView('quiz');
+              }}
+              style={{
+                marginTop: '1rem',
+                padding: '0.5rem 1rem',
+                fontSize: '1rem',
+                borderRadius: 4,
+                border: 'none',
+                backgroundColor: '#28a745',
+                color: '#fff',
+                cursor: 'pointer',
+              }}
+            >
+              Try Again
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

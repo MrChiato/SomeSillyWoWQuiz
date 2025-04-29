@@ -1,6 +1,5 @@
 [
     {
-        "id": 100,
         "difficulty": 1,
         "names": [
             "Charge"
@@ -10,7 +9,6 @@
         "description": "Charge at the enemy, stunning them for 1.5 seconds and generating 1 Rage."
     },
     {
-        "id": 12294,
         "difficulty": 2,
         "names": [
             "Mortal Strike",
@@ -21,7 +19,6 @@
         "description": "A vicious attack that deals damage and wounds the target, reducing all healing received by 50% for 10 sec."
     },
     {
-        "id": 133,
         "difficulty": 1,
         "names": [
             "Fireball"
@@ -31,7 +28,6 @@
         "description": "Hurl a fiery ball that causes Fire damage and applies a burning DoT for 4 sec."
     },
     {
-        "id": 116,
         "difficulty": 1,
         "names": [
             "Frostbolt"
@@ -41,7 +37,6 @@
         "description": "Launches a bolt of frost at the enemy, dealing Frost damage and reducing movement speed by 30% for 4 sec."
     },
     {
-        "id": 853,
         "difficulty": 2,
         "names": [
             "Hammer of Justice",
@@ -52,7 +47,6 @@
         "description": "Stuns the target for 6 seconds."
     },
     {
-        "id": 172,
         "difficulty": 3,
         "names": [
             "Corruption"
@@ -62,7 +56,6 @@
         "description": "Corrupts the target, causing Shadow damage over 14 seconds."
     },
     {
-        "id": 585,
         "difficulty": 1,
         "names": [
             "Smite"
@@ -72,7 +65,6 @@
         "description": "Smites an enemy for Holy damage."
     },
     {
-        "id": 686,
         "difficulty": 2,
         "names": [
             "Shadow Bolt"
@@ -82,7 +74,6 @@
         "description": "Sends a bolt of dark magic at an enemy, causing Shadow damage."
     },
     {
-        "id": 403,
         "difficulty": 1,
         "names": [
             "Lightning Bolt",
@@ -95,7 +86,6 @@
         "description": "Casts a bolt of lightning at the target, dealing Nature damage."
     },
     {
-        "id": 1953,
         "difficulty": 1,
         "names": [
             "Blink"
@@ -105,7 +95,6 @@
         "description": "Teleports the caster 20 yards forward, freeing them from stuns and bonds."
     },
     {
-        "id": 8122,
         "difficulty": 2,
         "names": [
             "Psychic Scream"
@@ -115,7 +104,6 @@
         "description": "The caster lets out a psychic scream, causing enemies within 8 yards to flee in fear for 8 seconds."
     },
     {
-        "id": 34433,
         "difficulty": 3,
         "names": [
             "Shadowfiend"
@@ -125,7 +113,6 @@
         "description": "Summons a shadowy fiend to attack your enemy, restoring mana to you as it deals damage."
     },
     {
-        "id": 8092,
         "difficulty": 1,
         "names": [
             "Mind Blast"
@@ -135,7 +122,6 @@
         "description": "Blasts the target's mind for heavy Shadow damage."
     },
     {
-        "id": 2983,
         "difficulty": 1,
         "names": [
             "Sprint"
@@ -145,7 +131,6 @@
         "description": "Increases movement speed by 70% for 8 seconds."
     },
     {
-        "id": 1856,
         "difficulty": 2,
         "names": [
             "Vanish"
@@ -155,7 +140,6 @@
         "description": "Allows the rogue to vanish from sight, entering stealth even while in combat."
     },
     {
-        "id": 30283,
         "difficulty": 2,
         "names": [
             "Shadowfury"
@@ -165,8 +149,7 @@
         "description": "Calls down a bolt of shadow energy, stunning all enemies within the area for 3 seconds."
     },
     {
-        "id": 206803,
-        "difficulty": 3,
+        "difficulty": 4,
         "names": [
             "Rain from Above"
         ],
@@ -175,7 +158,6 @@
         "description": "Launch into the air and bombard enemies with fel energy."
     },
     {
-        "id": 58984,
         "difficulty": 1,
         "names": [
             "Shadowmeld"
@@ -185,7 +167,6 @@
         "description": "Activate to slip into the shadows, reducing the chance for enemies to detect your presence."
     },
     {
-        "id": 19506,
         "difficulty": 1,
         "names": [
             "Trueshot Aura"
@@ -195,18 +176,17 @@
         "description": "Increases the attack power of party and raid members."
     },
     {
-        "id": 693,
         "difficulty": 1,
         "names": [
-            "Create Healthstone"
+            "Create Healthstone",
+            "Healthstone"
         ],
         "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/warlock_healthstone.jpg",
         "hint": "Create a healing stone.",
         "description": "Creates a Healthstone that can be used to instantly restore health."
     },
     {
-        "id": 10059,
-        "difficulty": 3,
+        "difficulty": 4,
         "names": [
             "Portal: Stormwind"
         ],
@@ -215,8 +195,7 @@
         "description": "Creates a portal, teleporting group members that use it to Stormwind."
     },
     {
-        "id": 10059,
-        "difficulty": 3,
+        "difficulty": 4,
         "names": [
             "Portal: Ironforge"
         ],
@@ -225,8 +204,7 @@
         "description": "Creates a portal, teleporting group members that use it to Ironforge."
     },
     {
-        "id": 10059,
-        "difficulty": 3,
+        "difficulty": 4,
         "names": [
             "Portal: Darnassus"
         ],
@@ -235,8 +213,7 @@
         "description": "Creates a portal, teleporting group members that use it to Darnassus."
     },
     {
-        "id": 10059,
-        "difficulty": 3,
+        "difficulty": 4,
         "names": [
             "Portal: Stonard"
         ],
@@ -245,8 +222,7 @@
         "description": "Creates a portal, teleporting group members that use it to Stonard."
     },
     {
-        "id": 10059,
-        "difficulty": 2,
+        "difficulty": 3,
         "names": [
             "Portal: Orgrimmar"
         ],
@@ -255,8 +231,7 @@
         "description": "Creates a portal, teleporting group members that use it to Orgrimmar."
     },
     {
-        "id": 10059,
-        "difficulty": 3,
+        "difficulty": 4,
         "names": [
             "Portal: Dazar'alor"
         ],
@@ -265,7 +240,6 @@
         "description": "Creates a portal, teleporting group members that use it to Dazar'alor."
     },
     {
-        "id": 10059,
         "difficulty": 3,
         "names": [
             "Portal: Dornogal"
@@ -275,8 +249,7 @@
         "description": "Creates a portal, teleporting group members that use it to Dornogal."
     },
     {
-        "id": 10059,
-        "difficulty": 3,
+        "difficulty": 4,
         "names": [
             "Portal: Valdrakken"
         ],
@@ -285,8 +258,7 @@
         "description": "Creates a portal, teleporting group members that use it to Valdrakken."
     },
     {
-        "id": 10059,
-        "difficulty": 3,
+        "difficulty": 4,
         "names": [
             "Portal: Oribos"
         ],
@@ -295,8 +267,7 @@
         "description": "Creates a portal, teleporting group members that use it to Oribos."
     },
     {
-        "id": 10059,
-        "difficulty": 3,
+        "difficulty": 4,
         "names": [
             "Portal: Undercity"
         ],
@@ -305,8 +276,7 @@
         "description": "Creates a portal, teleporting group members that use it to Undercity."
     },
     {
-        "id": 10059,
-        "difficulty": 3,
+        "difficulty": 4,
         "names": [
             "Portal: Silvermoon"
         ],
@@ -315,7 +285,6 @@
         "description": "Creates a portal, teleporting group members that use it to Silvermoon."
     },
     {
-        "id": 50613,
         "difficulty": 2,
         "names": [
             "Arcane Barrage"
@@ -325,7 +294,6 @@
         "description": "Launches all stored Arcane Charges at the enemy, dealing Arcane damage."
     },
     {
-        "id": 42292,
         "difficulty": 2,
         "names": [
             "Medallion of the Alliance",
@@ -336,7 +304,6 @@
         "description": "Removes all movement impairing effects and all effects that cause loss of control of your character."
     },
     {
-        "id": 32182,
         "difficulty": 1,
         "names": [
             "Heroism",
@@ -348,7 +315,15 @@
         "description": "Increases haste by 30% for all party and raid members for 40 seconds."
     },
     {
-        "id": 12051,
+        "difficulty": 1,
+        "names": [
+            "Heroism"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_shaman_heroism.jpg",
+        "hint": "Massive haste buff for your group.",
+        "description": "Increases haste by 30% for all party and raid members for 40 seconds."
+    },
+    {
         "difficulty": 2,
         "names": [
             "Evocation"
@@ -358,7 +333,6 @@
         "description": "Channeling mana regeneration, restoring a large amount of mana over 6 seconds."
     },
     {
-        "id": 47541,
         "difficulty": 1,
         "names": [
             "Death Coil"
@@ -368,7 +342,6 @@
         "description": "Fires a blast of unholy energy at the target, causing Shadow damage and healing you for 50% of the damage dealt."
     },
     {
-        "id": 47568,
         "difficulty": 2,
         "names": [
             "Empower Rune Weapon"
@@ -378,7 +351,6 @@
         "description": "Empowers your rune weapon, instantly generating full runes and 25 Runic Power."
     },
     {
-        "id": 104773,
         "difficulty": 2,
         "names": [
             "Unending Resolve"
@@ -388,7 +360,6 @@
         "description": "Increases damage reduction by 40% and grants immunity to interrupts and silence effects for 8 seconds."
     },
     {
-        "id": 36554,
         "difficulty": 2,
         "names": [
             "Shadowstep"
@@ -398,7 +369,6 @@
         "description": "Attempts to step through the shadows and appear behind your enemy, increasing movement speed for 2 sec."
     },
     {
-        "id": 212653,
         "difficulty": 1,
         "names": [
             "Shimmer",
@@ -409,8 +379,7 @@
         "description": "Teleports the caster forward 20 yards, freeing them from all stuns and bonds."
     },
     {
-        "id": 132578,
-        "difficulty": 3,
+        "difficulty": 4,
         "names": [
             "Invoke Yu'lon, the Jade Serpent",
             "Celestial Breath",
@@ -422,7 +391,6 @@
         "description": "Summons an image of Yu'lon that breathes healing mist onto injured allies."
     },
     {
-        "id": 51052,
         "difficulty": 2,
         "names": [
             "Anti-Magic Zone",
@@ -433,7 +401,6 @@
         "description": "Places a shield that reduces magic damage taken by party and raid members by 20%."
     },
     {
-        "id": 122470,
         "difficulty": 1,
         "names": [
             "Touch of Karma"
@@ -443,7 +410,6 @@
         "description": "Redirects all damage you take to the attacker for 10 seconds."
     },
     {
-        "id": 116680,
         "difficulty": 2,
         "names": [
             "Thunder Focus Tea",
@@ -454,7 +420,6 @@
         "description": "Receive a jolt of energy, empowering your next spell cast."
     },
     {
-        "id": 190319,
         "difficulty": 1,
         "names": [
             "Combustion"
@@ -464,7 +429,6 @@
         "description": "Grants 100% increased critical strike chance for your Fire spells for 10 seconds."
     },
     {
-        "id": 190336,
         "difficulty": 2,
         "names": [
             "Conjure Refreshment"
@@ -474,7 +438,6 @@
         "description": "Conjures a table of refreshments that restores health and mana."
     },
     {
-        "id": 324,
         "difficulty": 2,
         "names": [
             "Lightning Shield"
@@ -484,7 +447,6 @@
         "description": "Surround yourself with lightning, dealing damage to attackers when hit."
     },
     {
-        "id": 45438,
         "difficulty": 1,
         "names": [
             "Ice Block"
@@ -494,7 +456,6 @@
         "description": "Encases you in a block of ice, protecting you from all attacks and spells for 10 seconds."
     },
     {
-        "id": 2139,
         "difficulty": 1,
         "names": [
             "Counterspell"
@@ -504,7 +465,6 @@
         "description": "Counters the enemy's spell, preventing any spell from that school from being cast for 6 seconds."
     },
     {
-        "id": 32546,
         "difficulty": 3,
         "names": [
             "Binding Heal"
@@ -514,7 +474,6 @@
         "description": "Heals a friendly target and the caster at the same time."
     },
     {
-        "id": 115098,
         "difficulty": 2,
         "names": [
             "Chi Wave"
@@ -524,7 +483,6 @@
         "description": "A wave of Chi energy bounces between allies and enemies, healing allies and damaging enemies."
     },
     {
-        "id": 137639,
         "difficulty": 3,
         "names": [
             "Storm, Earth, and Fire"
@@ -534,7 +492,6 @@
         "description": "Split into elemental spirits to attack multiple enemies simultaneously."
     },
     {
-        "id": 102342,
         "difficulty": 1,
         "names": [
             "Ironbark"
@@ -544,7 +501,6 @@
         "description": "The target's damage taken is reduced by 20% for 12 seconds."
     },
     {
-        "id": 740,
         "difficulty": 1,
         "names": [
             "Tranquility"
@@ -554,7 +510,6 @@
         "description": "Heals all nearby group members every 2 seconds for 8 seconds."
     },
     {
-        "id": 198838,
         "difficulty": 1,
         "names": [
             "Earthen Wall Totem",
@@ -565,7 +520,6 @@
         "description": "Your skin becomes as tough as bark, reducing all damage you take by 20% and preventing damage from delaying your spellcasts. Lasts 8 sec."
     },
     {
-        "id": 31850,
         "difficulty": 1,
         "names": [
             "Ardent Defender"
@@ -575,7 +529,6 @@
         "description": "Reduces all damage taken by 20%, and if you fall below 20% health, you will instantly heal for 50% of maximum health."
     },
     {
-        "id": 198103,
         "difficulty": 1,
         "names": [
             "Earth Elemental"
@@ -585,7 +538,6 @@
         "description": "Calls forth an Earth Elemental to protect you and your allies for a short time."
     },
     {
-        "id": 8690,
         "difficulty": 1,
         "names": [
             "Hearthstone"
@@ -595,8 +547,7 @@
         "description": "Teleports the caster to their home location."
     },
     {
-        "id": 60320,
-        "difficulty": 3,
+        "difficulty": 5,
         "names": [
             "Scroll of Recall"
         ],
@@ -605,7 +556,6 @@
         "description": "Returns you to your hearthstone location. Slight chance of failure."
     },
     {
-        "id": 390386,
         "difficulty": 3,
         "names": [
             "Time Spiral"
@@ -615,8 +565,7 @@
         "description": "Allows allies to cast a major movement ability that is normally on cooldown."
     },
     {
-        "id": 161691,
-        "difficulty": 3,
+        "difficulty": 4,
         "names": [
             "Teleport: Warspear"
         ],
@@ -625,8 +574,7 @@
         "description": "Teleports the caster to Warspear, the Horde base on Ashran."
     },
     {
-        "id": 161792,
-        "difficulty": 3,
+        "difficulty": 4,
         "names": [
             "Teleport: Stormshield"
         ],
@@ -635,17 +583,15 @@
         "description": "Teleports the caster to Stormshield, the Alliance base on Ashran."
     },
     {
-        "id": 224869,
-        "difficulty": 2,
+        "difficulty": 5,
         "names": [
             "Toy Train Set"
         ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/inv_misc_enggizmos_17.jpg",
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_toy_10.jpg",
         "hint": "Summons a toy train to annoy people.",
         "description": "Place a toy train set that attracts the attention of nearby players and causes them to /train emote."
     },
     {
-        "id": 122,
         "difficulty": 1,
         "names": [
             "Frost Nova"
@@ -655,7 +601,6 @@
         "description": "Blasts enemies near the caster for Frost damage and freezes them in place for 8 seconds."
     },
     {
-        "id": 118,
         "difficulty": 1,
         "names": [
             "Polymorph"
@@ -665,7 +610,6 @@
         "description": "Transforms the enemy into a sheep, incapacitating them for 50 seconds. Damage will cancel the effect."
     },
     {
-        "id": 61295,
         "difficulty": 2,
         "names": [
             "Riptide"
@@ -675,7 +619,6 @@
         "description": "Heals a friendly target instantly and applies a heal over time effect."
     },
     {
-        "id": 11426,
         "difficulty": 2,
         "names": [
             "Ice Barrier"
@@ -685,7 +628,6 @@
         "description": "Shields you with ice, absorbing damage for 1 minute."
     },
     {
-        "id": 11366,
         "difficulty": 1,
         "names": [
             "Pyroblast"
@@ -695,7 +637,6 @@
         "description": "Hurls an immense fiery boulder that causes massive Fire damage."
     },
     {
-        "id": 2823,
         "difficulty": 2,
         "names": [
             "Deadly Poison"
@@ -705,7 +646,6 @@
         "description": "Coats your weapon with poison that has a chance to inflict extra Nature damage."
     },
     {
-        "id": 5938,
         "difficulty": 1,
         "names": [
             "Shiv"
@@ -715,7 +655,6 @@
         "description": "Thrusts with your off-hand weapon to apply an instant poison effect."
     },
     {
-        "id": 83968,
         "difficulty": 1,
         "names": [
             "Mass Resurrection"
@@ -725,7 +664,6 @@
         "description": "Brings all dead party and raid members back to life with 35% health and mana."
     },
     {
-        "id": 34477,
         "difficulty": 1,
         "names": [
             "Misdirection"
@@ -735,7 +673,6 @@
         "description": "Redirects all threat you cause to a friendly target for 8 seconds."
     },
     {
-        "id": 194153,
         "difficulty": 1,
         "names": [
             "Starfire"
@@ -745,8 +682,7 @@
         "description": "Call down a burst of energy, causing Arcane damage to the target."
     },
     {
-        "id": 445417,
-        "difficulty": 3,
+        "difficulty": 5,
         "names": [
             "Path of the Ruined City"
         ],
@@ -755,8 +691,7 @@
         "description": "Teleport to the entrance to Ara-Kara, City of Echoes."
     },
     {
-        "id": 354463,
-        "difficulty": 3,
+        "difficulty": 5,
         "names": [
             "Path of the Plagued"
         ],
@@ -765,8 +700,7 @@
         "description": "Teleport to the entrance to Plaguefall."
     },
     {
-        "id": 393279,
-        "difficulty": 3,
+        "difficulty": 5,
         "names": [
             "Path of Arcane Secrets "
         ],
@@ -775,8 +709,7 @@
         "description": "Teleport to the entrance to The Azure Vault."
     },
     {
-        "id": 131204,
-        "difficulty": 3,
+        "difficulty": 5,
         "names": [
             "Path of the Jade Serpent"
         ],
@@ -785,8 +718,7 @@
         "description": "Teleport to the entrance to the Temple of the Jade Serpent.."
     },
     {
-        "id": 159898,
-        "difficulty": 3,
+        "difficulty": 5,
         "names": [
             "Path of the Skies"
         ],
@@ -795,8 +727,7 @@
         "description": "Teleport to the entrance to Skyreach."
     },
     {
-        "id": 424142,
-        "difficulty": 3,
+        "difficulty": 5,
         "names": [
             "Path of the Tidehunter"
         ],
@@ -805,8 +736,7 @@
         "description": "Teleport to the entrance to Throne of the Tides."
     },
     {
-        "id": 354464,
-        "difficulty": 3,
+        "difficulty": 5,
         "names": [
             "Path of the Misty Forest"
         ],
@@ -815,13 +745,780 @@
         "description": "Teleport to the entrance to Mists of Tirna Scithe."
     },
     {
-        "id": 445441,
-        "difficulty": 3,
+        "difficulty": 5,
         "names": [
             "Path of the Warding Candles"
         ],
         "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_achievement_dungeon_darkflamecleft.jpg",
         "hint": "Teleport to dungeon entrance.",
         "description": "Teleport to the entrance to Darkflame Cleft."
-    }
+    },
+    {
+        "difficulty": 3,
+        "names": [
+            "Dream Breath"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_dreambreath.jpg",
+        "hint": "Hold to AoE heal.",
+        "description": "Inhale, gathering the power of the Dream. Release to exhale, healing yourself and 5 injured allies in a 30 yd cone in front of you."
+    },
+    {
+        "difficulty": 2,
+        "names": [
+            "Spiritbloom"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_spiritbloom2.jpg",
+        "hint": "Heal 1, 2 or 3 allies.",
+        "description": "Divert spiritual energy, healing an ally. Jumps to injured allies within 30 yds when empowered."
+    },
+    {
+        "difficulty": 2,
+        "names": [
+            "Fire Breath"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_firebreath.jpg",
+        "hint": "Click for long dot, hold for short dot.",
+        "description": "Inhale, stoking your inner flame. Release to exhale, burning enemies in a cone in front of you, reduced beyond 5 targets. Empowering causes more of the damage to be dealt immediately instead of over time."
+    },
+    {
+        "difficulty": 3,
+        "names": [
+            "Echo"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_echo.jpg",
+        "hint": "2 heals for the price of 1.",
+        "description": "Wrap an ally with temporal energy, healing them and causing your next healing spell to cast an additional time on that ally at 70% of normal healing."
+    },
+    {
+        "difficulty": 1,
+        "names": [
+            "Living Flame"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_livingflame.jpg",
+        "hint": "Heal or damage fire.",
+        "description": "Send a flickering flame towards your target."
+    },
+    {
+        "difficulty": 4,
+        "names": [
+            "Reversion"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_reversion2.jpg",
+        "hint": "Healing over time, bigger if more damage taken.",
+        "description": "Reverse an ally's injuries."
+    },
+    {
+        "difficulty": 4,
+        "names": [
+            "Emerald Blossom"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_emeraldblossom.jpg",
+        "hint": "Heal on ground.",
+        "description": "Grow a bulb from the Emerald Dream at an ally's location. After 1.5 sec, heal up to 3 injured allies within 10 yds."
+    },
+    {
+        "difficulty": 3,
+        "names": [
+            "Ebon Might"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_sarkareth.jpg",
+        "hint": "Stat for allies.",
+        "description": "Increase your 4 nearest allies' primary stat by 5% of your own, and cause you to deal 20% more damage, for 10 sec."
+    },
+    {
+        "difficulty": 3,
+        "names": [
+            "Blistering Scales"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_blisteringscales.jpg",
+        "hint": "Increase armor of ally.",
+        "description": "Protect an ally with 15 explosive dragonscales, increasing their Armor by 20% of your own."
+    },
+    {
+        "difficulty": 4,
+        "names": [
+            "Prescience"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_prescience.jpg",
+        "hint": "Increase ally crit.",
+        "description": "Grant an ally the gift of foresight, increasing their critical strike chance by 3%."
+    },
+    {
+        "difficulty": 5,
+        "names": [
+            "Sands of Time"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_sandsoftime.jpg",
+        "hint": "Increase duration of a specific effect you cause.",
+        "description": "Increases the duration of your active Ebon Might effects by 1 sec."
+    },
+    {
+        "difficulty": 3,
+        "names": [
+            "Eruption"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_eruption.jpg",
+        "hint": "AoE volcanic damage.",
+        "description": "Cause a violent eruption beneath an enemy's feet, dealing Volcanic damage split between them and nearby enemies."
+    },
+    {
+        "difficulty": 2,
+        "names": [
+            "Hover"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_hover.jpg",
+        "hint": "Dash with movespeed and cast while moving.",
+        "description": "Launch yourself and gain 30% increased movement speed for 6 sec. Allows Evoker spells to be cast while moving. Does not affect empowered spells."
+    },
+    {
+        "difficulty": 1,
+        "names": [
+            "Pyre"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_pyre.jpg",
+        "hint": "AoE ball of flame.",
+        "description": "Lob a ball of flame, dealing Fire damage to the target and nearby enemies."
+    },
+    {
+        "difficulty": 2,
+        "names": [
+            "Disintegrate"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_disintegrate.jpg",
+        "hint": "Channeled single target beam.",
+        "description": "Tear into an enemy with a blast of blue magic, inflicting Spellfrost damage over 3 sec, and slowing their movement speed by 50% for 3 sec."
+    },
+    {
+        "difficulty": 4,
+        "names": [
+            "Shattering Star"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_evoker_chargedblast.jpg",
+        "hint": "Increase enemy damage taken from you.",
+        "description": "Exhale bolts / a bolt of concentrated power from your mouth that cracks the target's defenses, increasing the damage they take from you by 20% for 4 sec."
+    },
+    {
+        "difficulty": 1,
+        "names": [
+            "Barbed Shot",
+            "Frenzy"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_barbedshot.jpg",
+        "hint": "Arrow that causes bleed.",
+        "description": "Fire a shot that tears through your enemy, causing them to bleed. Sends your pet into a frenzy."
+    },
+    {
+        "difficulty": 2,
+        "names": [
+            "Bestial Wrath",
+            "Ferocious Bite"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_ferociousbite.jpg",
+        "hint": "Make pet angry.",
+        "description": "Sends you and your pet into a rage."
+    },
+    {
+        "difficulty": 1,
+        "names": [
+            "Hunter's Mark"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_markedfordeath.jpg",
+        "hint": "Increase enemy damage taken from you.",
+        "description": "Apply (Ability) to the target, causing the target to always be seen and tracked by the Hunter."
+    },
+    {
+        "difficulty": 2,
+        "names": [
+            "Kill Command"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_killcommand.jpg",
+        "hint": "Command pet to damage target.",
+        "description": "Give the command to kill."
+    },
+    {
+        "difficulty": 2,
+        "names": [
+            "Multi-Shot"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_upgrademoonglaive.jpg",
+        "hint": "AoE arrow",
+        "description": "Fires several missiles, hitting your current target and all enemies within 10 yards."
+    },
+    {
+        "difficulty": 1,
+        "names": [
+            "Aimed Shot"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_spear_07.jpg",
+        "hint": "Long cast shot.",
+        "description": "A powerful aimed shot that deals."
+    },
+    {
+        "difficulty": 4,
+        "names": [
+            "Explosive Shot"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_explosiveshot.jpg",
+        "hint": "Arrow that goes boom.",
+        "description": "Fires an explosive shot at your target. After 3 sec, the shot will explode."
+    },
+    {
+        "difficulty": 4,
+        "names": [
+            "Flanking Strike"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_invigeration.jpg",
+        "hint": "Player and Pet leap.",
+        "description": "You and your pet leap to the target and strike it as one."
+    },
+    {
+        "difficulty": 3,
+        "names": [
+            "Wildfire Bomb"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_wildfirebomb.jpg",
+        "hint": "Throw bomb.",
+        "description": "Hurl a bomb at the target exploding for Fire damage in a cone and coating enemies in wildfire."
+    },
+    {
+        "difficulty": 2,
+        "names": [
+            "Arcane Barrage"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_mage_arcanebarrage.jpg",
+        "hint": "More damage based on arcane charges.",
+        "description": "Launches bolts of arcane energy at the enemy target."
+    },
+    {
+        "difficulty": 2,
+        "names": [
+            "Arcane Blast"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_arcane_blast.jpg",
+        "hint": "Generates 1 Arcane Charge",
+        "description": "Each Arcane Charge increases damage by 60% and mana cost by 100%, and reduces cast time by 8%."
+    },
+    {
+        "difficulty": 4,
+        "names": [
+            "Comet Storm"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_mage_cometstorm2.jpg",
+        "hint": "Ice from sky",
+        "description": "Calls down a series of 7 icy comets on and around the target."
+    },
+    {
+        "difficulty": 3,
+        "names": [
+            "Frozen Orb"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_frozenorb.jpg",
+        "hint": "Spinning ice damage",
+        "description": "Launches an orb of swirling ice up to 40 yds."
+    },
+    {
+        "difficulty": 2,
+        "names": [
+            "Scorch"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_soulburn.jpg",
+        "hint": "Short cast, can use while moving",
+        "description": "Scorches an enemy."
+    },
+    {
+        "difficulty": 3,
+        "names": [
+            "Fire Blast",
+            "Conflagrate"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_fireball.jpg",
+        "hint": "Instant cast, always crit if Fire",
+        "description": "Blasts the enemy for fire damage."
+    },
+    {
+        "difficulty": 2,
+        "names": [
+            "Pyroblast"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_fireball02.jpg",
+        "hint": "Big fire damage, long cast",
+        "description": "Hurls an immense fiery boulder."
+    },
+    {
+        "difficulty": 2,
+        "names": [
+            "Keg Smash"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/achievement_brewery_2.jpg",
+        "hint": "AoE damage and slow",
+        "description": "Smash a keg of brew on the target. Grants Shuffle."
+    },
+    {
+        "difficulty": 2,
+        "names": [
+            "Blackout Kick"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_monk_roundhousekick.jpg",
+        "hint": "Used by all monk specs",
+        "description": "Kick with a blast of Chi energy,."
+    },
+    {
+        "difficulty": 3,
+        "names": [
+            "Breath of Fire"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_monk_breathoffire.jpg",
+        "hint": "Fire damage infront of you",
+        "description": "Breathe fire on targets in front of you."
+    },
+    {
+        "difficulty": 5,
+        "names": [
+            "Weapons of Order"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_monk_weaponsoforder.jpg",
+        "hint": "Buff mastery and reset cooldowns",
+        "description": "For the next 30 sec, your Mastery is increased."
+    },
+    {
+        "difficulty": 2,
+        "names": [
+            "Fists of Fury"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/monk_ability_fistoffury.jpg",
+        "hint": "Hit all targets infront of you very fast",
+        "description": "Pummels all targets in front of you. Deals reduced damage beyond 5 targets. Can be channeled while moving."
+    },
+    {
+        "difficulty": 4,
+        "names": [
+            "Whirling Dragon Punch"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_monk_hurricanestrike.jpg",
+        "hint": "Requires other abilities to be on cooldown",
+        "description": "Performs a devastating whirling upward strike. Only usable while both Fists of Fury and Rising Sun Kick are on cooldown."
+    },
+    {
+        "difficulty": 1,
+        "names": [
+            "Renewing Mist"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_monk_renewingmists.jpg",
+        "hint": "Monk HoT",
+        "description": "Surrounds the target with healing mists."
+    },
+    {
+        "difficulty": 5,
+        "names": [
+            "Rushing Wind Kick"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_monk_ridethewind.jpg",
+        "hint": "Healing kick",
+        "description": "Kick up a powerful gust of wind."
+    },
+    {
+        "difficulty": 2,
+        "names": [
+          "Final Verdict"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_paladin_templarsverdict.jpg",
+        "hint": "Holy weapon strike",
+        "description": "Unleashes a powerful weapon strike that deals Holy damage to an enemy target and has a chance to reset Hammer of Wrath."
+      },
+      {
+        "difficulty": 3,
+        "names": [
+          "Divine Storm"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_paladin_divinestorm.jpg",
+        "hint": "Area Holy damage",
+        "description": "Instantly strikes all nearby enemies within 8 yards, dealing Holy damage and healing up to three allies for a portion of the damage dealt."
+      },
+      {
+        "difficulty": 1,
+        "names": [
+          "Judgment"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_righteousfury.jpg",
+        "hint": "Single-target hammer",
+        "description": "Fires a hammer at the target, dealing Holy damage and applying the Judgment debuff to increase damage taken."
+      },
+      {
+        "difficulty": 1,
+        "names": [
+          "Consecration"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_innerfire.jpg",
+        "hint": "Ground AoE from Paladin",
+        "description": "Consecrates the ground beneath you, dealing Holy damage every second to enemies standing in the area."
+      },
+      {
+        "difficulty": 4,
+        "names": [
+          "Divine Toll"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_paladin_divinetoll.jpg",
+        "hint": "Cast main paladin ability on many targets",
+        "description": "Sends out a wave of holy energy that strikes multiple nearby targets for Holy damage."
+      },
+      {
+        "difficulty": 1,
+        "names": [
+          "Power Word: Shield"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_powerwordshield.jpg",
+        "hint": "Shield on target",
+        "description": "Shields a friendly target, absorbing damage."
+      },
+      {
+        "difficulty": 3,
+        "names": [
+          "Penance"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_penance.jpg",
+        "hint": "Bolt volley",
+        "description": "Launches bolts of holy light that heal allies or damage enemies over a short duration."
+      },
+      {
+        "difficulty": 5,
+        "names": [
+          "Void Eruption"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_priest_void-blast.jpg",
+        "hint": "Shadowform burst",
+        "description": "Transforms into Voidform, unleashing a burst of shadow energy that deals damage and enhances your abilities."
+      },
+      {
+        "difficulty": 3,
+        "names": [
+          "Prayer of Mending"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_prayerofmendingtga.jpg",
+        "hint": "Bouncing heal",
+        "description": "Places a healing effect on a target that heals them and then jumps to another wounded ally after healing."
+      },
+      {
+        "difficulty": 5,
+        "names": [
+          "Premonition of Insight"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_oraclepriest_premonitioninsight.jpg",
+        "hint": "Cooldown reduction",
+        "description": "Reduces the cooldown of your next 3 spell casts by 7 sec."
+      },
+      {
+        "difficulty": 5,
+        "names": [
+          "Premonition of Piety"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_oraclepriest_premonitionpiety.jpg",
+        "hint": "Increase healing and overhealing is useful",
+        "description": "Increases your healing done by 20% and causes 70% of overhealing on players to be redistributed to up to 4 nearby allies for 15 sec."
+      },
+      {
+        "difficulty": 4,
+        "names": [
+          "Roll the Bones"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_rogue_rollthebones.jpg",
+        "hint": "Random buff",
+        "description": "Grants you a random selection of combat buffs to enhance your next few attacks."
+      },
+      {
+        "difficulty": 2,
+        "names": [
+          "Pistol Shot"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_rogue_pistolshot.jpg",
+        "hint": "Quick ranged shot",
+        "description": "Fires a pistol at the target, dealing physical damage."
+      },
+      {
+        "difficulty": 5,
+        "names": [
+          "Deathmark"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_rogue_deathmark.jpg",
+        "hint": "Big bleed",
+        "description": "Carve a deathmark into an enemy, dealing Bleed damage over 16 sec. While marked your Garrote, Rupture, and Lethal poisons applied to the target are duplicated, dealing 100% of normal damage."
+      },
+      {
+        "difficulty": 3,
+        "names": [
+          "Envenom"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_rogue_disembowel.jpg",
+        "hint": "Poisoned finish",
+        "description": "Finishing move that drives your poisoned blades in deep, dealing instant Nature damage and increasing your poison application chance by 30%. Damage and duration increased per combo point."
+      },
+      {
+        "difficulty": 1,
+        "names": [
+          "Eviscerate"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_rogue_eviscerate.jpg",
+        "hint": "Damage depending on combo points",
+        "description": "Finishing move that disembowels the target, causing damage per combo point."
+      },
+      {
+        "difficulty": 4,
+        "names": [
+          "Symbols of Death"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_rune.jpg",
+        "hint": "Damage done increased by 10%.",
+        "description": "Invoke ancient symbols of power, generating 40 Energy and increasing damage done by 10% for 10 sec.."
+      },
+      {
+        "difficulty": 1,
+        "names": [
+          "Stormstrike"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_shaman_stormstrike.jpg",
+        "hint": "Elemental strike",
+        "description": "Strikes the target with both weapons, dealing Nature damage."
+      },
+      {
+        "difficulty": 4,
+        "names": [
+          "Doom Winds"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_ironmaidens_swirlingvortex.jpg",
+        "hint": "Storm of doom",
+        "description": "Unleash a devastating storm around yourself. Increases your chance to activate Windfury Weapon by 200%, and the damage of Windfury Weapon by 10%."
+      },
+      {
+        "difficulty": 3,
+        "names": [
+          "Chain Heal"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_1115_shaman_chainheal.jpg",
+        "hint": "Bouncing heal",
+        "description": "Heals a friendly target and then jumps to additional injured allies for diminishing amounts."
+      },
+      {
+        "difficulty": 2,
+        "names": [
+          "Soul Fire"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_firebolt.jpg",
+        "hint": "Generates 1 Soul Shard",
+        "description": "Burns the enemy's soul, dealing Fire damage and applying Immolate."
+      },
+      {
+        "difficulty": 1,
+        "names": [
+          "Chaos Bolt"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_warlock_chaosbolt.jpg",
+        "hint": "Long cast, big damage. Pyroblast for Warlock.",
+        "description": "Unleashes a bolt of chaotic energy that always critically strikes, dealing Chaos damage."
+      },
+      {
+        "difficulty": 1,
+        "names": [
+          "Agony"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseofsargeras.jpg",
+        "hint": "Lingering pain",
+        "description": "Afflicts the target with a Curse of Agony, dealing damage over time."
+      },
+      {
+        "difficulty": 3,
+        "names": [
+          "Hand of Gul'dan"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_warlock_handofguldan.jpg",
+        "hint": "Meteor of imps",
+        "description": "Calls down a demonic meteor full of Wild Imps which burst forth to attack the target."
+      },
+      {
+        "difficulty": 1,
+        "names": [
+          "Execute"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_sword_48.jpg",
+        "hint": "Big damage to dying target",
+        "description": "Attempts to finish off a foe."
+      },
+      {
+        "difficulty": 2,
+        "names": [
+          "Avatar"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/warrior_talent_icon_avatar.jpg",
+        "hint": "Warrior become big",
+        "description": "Transforms you into an unstoppable avatar of war, increasing Strength for a short duration."
+      },
+      {
+        "difficulty": 1,
+        "names": [
+          "Thunder Clap"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_thunderclap.jpg",
+        "hint": "Main AoE for Prot warrior",
+        "description": "Claps the ground, dealing damage to all nearby enemies and reducing their movement speed."
+      },
+      {
+        "difficulty": 3,
+        "names": [
+          "Ravager"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/warrior_talent_icon_ravager.jpg",
+        "hint": "Generates 10 Rage each time it deals damage.",
+        "description": "Throws a whirling weapon at the target location that chases nearby enemies."
+      },
+      {
+        "difficulty": 3,
+        "names": [
+          "Breath of Sindragosa"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_breathofsindragosa.jpg",
+        "hint": "Frost breath",
+        "description": "Continuously deal. Frost damage every 1 sec to enemies in a cone in front of you, until your Runic Power is exhausted. Deals reduced damage to secondary targets."
+      },
+      {
+        "difficulty": 2,
+        "names": [
+          "Obliterate"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_classicon.jpg",
+        "hint": "Destroy",
+        "description": "A brutal attack."
+      },
+      {
+        "difficulty": 1,
+        "names": [
+          "Death Strike"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_butcher2.jpg",
+        "hint": "Heal depending on damage taken",
+        "description": "Strikes an enemy for physical damage and heals you for a portion of damage you have taken."
+      },
+      {
+        "difficulty": 1,
+        "names": [
+          "Eye Beam"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_demonhunter_eyebeam.jpg",
+        "hint": "Big damage beam from your head",
+        "description": "Unleashes a beam of demonic energy from both eyes, damaging all enemies in front of you."
+      },
+      {
+        "difficulty": 5,
+        "names": [
+          "Reaver's Glaive"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_aldrachireaverdemonhunter_reaversglaive.jpg",
+        "hint": "Throw glaive but stronger",
+        "description": "Throw a glaive enhanced with the essence of consumed souls at your target."
+      },
+      {
+        "difficulty": 3,
+        "names": [
+          "Fel Devastation"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_demonhunter_feldevastation.jpg",
+        "hint": "Eye beam for tanks",
+        "description": "Unleash the fel within you, damaging enemies directly in front of you."
+      },
+      {
+        "difficulty": 3,
+        "names": [
+          "Spirit Bomb"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_icon_shadowcouncilorb_purple.jpg",
+        "hint": "Consume souls and deal damage depending on amount",
+        "description": "Consume up to 5 available Soul Fragments then explode, damaging nearby enemies."
+      },
+      {
+        "difficulty": 2,
+        "names": [
+          "Efflorescence"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_herb_talandrasrose.jpg",
+        "hint": "Healing on ground",
+        "description": "Creates a circle of healing flowers that restore health to allies standing within it over time."
+      },
+      {
+        "difficulty": 2,
+        "names": [
+          "Rejuvenation"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_rejuvenation.jpg",
+        "hint": "Druid HoT spell",
+        "description": "Heals the target over time."
+      },
+      {
+        "difficulty": 2,
+        "names": [
+          "Wrath"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_wrathv2.jpg",
+        "hint": "Nature bolt",
+        "description": "Hurls a blast of energy at the enemy, dealing Nature damage."
+      },
+      {
+        "difficulty": 4,
+        "names": [
+          "Celestial Alignment"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_natureguardian.jpg",
+        "hint": "Grants both Eclipses",
+        "description": "Celestial bodies align, maintaining both Eclipses and granting 10% haste for 15 sec."
+      },
+      {
+        "difficulty": 1,
+        "names": [
+          "Thrash"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_druid_thrash.jpg",
+        "hint": "Savage swipe that causes bleed",
+        "description": "Sweeps your attack across all nearby enemies, dealing damage and applying a bleed effect."
+      },
+      {
+        "difficulty": 5,
+        "names": [
+          "Raze"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_lacerate.jpg",
+        "hint": "Ursoc strike",
+        "description": "Strike with the might of Ursoc. Physical damage to your target and to all other enemies in front of you. Damage reduced beyond 5 targets."
+      },
+      {
+        "difficulty": 2,
+        "names": [
+          "Rake"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_disembowel.jpg",
+        "hint": "Single target cat bleed",
+        "description": "Rakes the target, dealing initial Physical damage and causing bleed damage over time."
+      },
+      {
+        "difficulty": 2,
+        "names": [
+          "Rip"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_ghoulfrenzy.jpg",
+        "hint": "Powerful cat bleed",
+        "description": "Finishing move that causes Bleed damage over time. Lasts longer per combo point."
+      },
+      {
+        "difficulty": 5,
+        "names": [
+          "Vampiric Strike"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_ability_sanlayndeathknight_vampiricstrike.jpg",
+        "hint": "Heal and haste",
+        "description": "(Ability) heals you for 1% of your maximum health and grants you Essence of the Blood Queen, increasing your Haste by 1.0%, up to 5.0% for 20 sec.."
+      },
+      {
+        "difficulty": 2,
+        "names": [
+          "Scourge Strike"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_scourgestrike.jpg",
+        "hint": "Burst festering wound",
+        "description": "An unholy strike that Physical damage and Shadow damage, and causes 1 Festering Wound to burst."
+      }
 ]
