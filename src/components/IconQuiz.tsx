@@ -278,7 +278,8 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                 <div style={{ position: 'relative' }}>
                     <img
                         src={spell.iconUrl}
-                        alt={spell.names[0]}
+                        alt=""
+                        aria-label={spell.names[0]} 
                         draggable={false}
                         onContextMenu={(e) => e.preventDefault()}
                         style={{
