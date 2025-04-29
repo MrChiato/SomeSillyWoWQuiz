@@ -115,7 +115,8 @@
     {
         "difficulty": 1,
         "names": [
-            "Mind Blast"
+            "Mind Blast",
+            "Unholy Frenzy"
         ],
         "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_shadow_unholyfrenzy.jpg",
         "hint": "Direct psychic damage.",
@@ -386,9 +387,19 @@
             "Heart of the Jade Serpent",
             "Dragon Punch"
         ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_monk_chibrew.jpg",
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_monk_dragonkick.jpg",
         "hint": "Summon Yu'lon to heal allies.",
         "description": "Summons an image of Yu'lon that breathes healing mist onto injured allies."
+    },
+    {
+        "difficulty": 4,
+        "names": [
+            "Chi Brew",
+            "Black Ox Brew"
+        ],
+        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/ability_monk_chibrew.jpg",
+        "hint": "Little sip to reset some important cooldowns.",
+        "description": "Instantly refills your Energy, Purifying Brew charges, and resets the cooldown of Celestial Brew."
     },
     {
         "difficulty": 2,
@@ -1511,5 +1522,14 @@
         "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_scourgestrike.jpg",
         "hint": "Burst festering wound",
         "description": "An unholy strike that Physical damage and Shadow damage, and causes 1 Festering Wound to burst."
+      },
+      {
+        "difficulty": 4,
+        "names": [
+          "Orbital Strike"
+        ],
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_cresentburn.jpg",
+        "hint": "BIG LASER FROM SKY",
+        "description": "Celestial Alignment] blasts all enemies in a targeted area and applies Stellar Flare to them.."
       }
 ]
