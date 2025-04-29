@@ -244,7 +244,7 @@
         "names": [
             "Portal: Dornogal"
         ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_arcane_portaldornogal.jpg",
+        "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_spell_arcane_portaldornogal.jpg",
         "hint": "Opens a portal to somewhere.",
         "description": "Creates a portal, teleporting group members that use it to Dornogal."
     },
@@ -626,15 +626,6 @@
         "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_ice_lament.jpg",
         "hint": "Shields you with ice.",
         "description": "Shields you with ice, absorbing damage for 1 minute."
-    },
-    {
-        "difficulty": 1,
-        "names": [
-            "Pyroblast"
-        ],
-        "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_fire_fireball02.jpg",
-        "hint": "A huge, fiery blast.",
-        "description": "Hurls an immense fiery boulder that causes massive Fire damage."
     },
     {
         "difficulty": 2,

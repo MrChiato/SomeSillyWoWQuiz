@@ -43,6 +43,8 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
 
     const [highlighted, setHighlighted] = useState(-1);
 
+    const [rotation, setRotation] = useState(0);
+
     const questionCount = usedIcons.size;
     const [lockMode, setLockMode] = useState<'easy' | 'medium' | 'hard' | null>(null);
     const [mode, setMode] = useState<'easy' | 'medium' | 'hard'>('easy');
@@ -135,6 +137,8 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
         }
 
         setSpell(choice);
+        const angles = [0, 90, 180, 270];
+        setRotation(angles[Math.floor(Math.random() * angles.length)]);
         setWrongs([]);
         setUsedIcons((prev) => new Set(prev).add(choice.iconUrl));
         setAvailNames(allNames);
@@ -279,7 +283,7 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                     <img
                         src={spell.iconUrl}
                         alt=""
-                        aria-label={spell.names[0]} 
+                        aria-label={spell.names[0]}
                         draggable={false}
                         onContextMenu={(e) => e.preventDefault()}
                         style={{
@@ -287,6 +291,8 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                             height: 96,
                             objectFit: 'contain',
                             marginBottom: 16,
+                            transform: m !== 'easy' ? `rotate(${rotation}deg)` : undefined,
+                            filter: m === 'hard' ? 'grayscale(100%)' : undefined,
                         }}
                     />
 
