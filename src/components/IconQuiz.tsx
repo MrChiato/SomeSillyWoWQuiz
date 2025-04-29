@@ -234,7 +234,7 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 width: '100vw',
-                height: '100vh',
+                height: '100%',
                 padding: 16,
                 boxSizing: 'border-box',
                 position: 'relative',
