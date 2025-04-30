@@ -94,3 +94,20 @@ export async function fetchAllSpells(): Promise<Spell[]> {
         difficulty: s.difficulty,
     }));
 }
+
+export type SpellStat = {
+    spell_name: string;
+    correct_count: number;
+    wrong_count: number;
+    wrong_guesses: string[];
+};
+
+export async function fetchSpellStats(): Promise<SpellStat[]> {
+    const { data, error } = await supabase
+        .from<'spell_stats', SpellStat>('spell_stats')
+        .select('*');
+
+    if (error) throw error;
+    return data || [];
+}
+
