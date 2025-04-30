@@ -2,7 +2,7 @@ import { useState } from 'react';
 import IconQuiz from './components/IconQuiz';
 import Leaderboards from './components/Leaderboard';
 import NameModal from './components/NameModal';
-import { submitScore } from './lib/supabase';
+import { fetchLeaderboard, submitScore } from './lib/supabase';
 
 export default function App() {
   const [view, setView] = useState<'quiz' | 'leaderboard'>('quiz');
@@ -24,7 +24,7 @@ export default function App() {
     mode: 'easy' | 'medium' | 'hard'
   ) => {
     setQuizMode(mode);
-    const keyScore = `wowQuizHighScore_${mode}`;
+    const keyScore = `wowQuizHighScorev2_${mode}`;
     const stored = parseInt(localStorage.getItem(keyScore) || '0', 10);
     if (finalScore > stored) {
       setPendingScore(finalScore);
@@ -34,19 +34,24 @@ export default function App() {
     }
   };
 
-  const handleModalSubmit = (name: string) => {
-    const keyScore = `wowQuizHighScore_${quizMode}`;
-    const keyName = `wowQuizPlayerName_${quizMode}`;
-
+  const handleModalSubmit = async (name: string) => {
+    const keyScore = `wowQuizHighScorev2_${quizMode}`;
+    const keyName = `wowQuizPlayerNamev2_${quizMode}`;
+  
     localStorage.setItem(keyScore, pendingScore.toString());
     localStorage.setItem(keyName, name);
-
+  
     const clean = name.trim().slice(0, 20);
     if (!clean) return;
-    submitScore(clean, pendingScore, quizMode).catch(console.error);
-
-    setModalOpen(false);
-    setView('leaderboard');
+  
+    try {
+      await submitScore(clean, pendingScore, quizMode);
+      await fetchLeaderboard(quizMode);
+      setModalOpen(false);
+      setView('leaderboard');
+    } catch (error) {
+      console.error('Error submitting score or refreshing leaderboard:', error);
+    }
   };
 
   const handleToggleView = () => {
@@ -101,7 +106,18 @@ export default function App() {
         initialName={localStorage.getItem(`wowQuizPlayerName_${quizMode}`) || ''}
         title="🎉 New High Score! 🎉"
         onSubmit={handleModalSubmit}
+        onClose={() => {
+          setModalOpen(false);
+          const keyScore = `wowQuizHighScore_${quizMode}`;
+          localStorage.setItem(keyScore, pendingScore.toString());
+          setGameOverInfo({
+            finalScore: pendingScore,
+            bestScore: pendingScore,
+            mode: quizMode,
+          });
+        }}
       />
+
       {gameOverInfo && (
         <div
           style={{

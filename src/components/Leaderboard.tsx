@@ -1,33 +1,65 @@
 import { useEffect, useState } from 'react';
 import { fetchLeaderboard } from '../lib/supabase';
+import LeaderboardModal from './LeaderboardModal';
 
 const MODES = ['easy', 'medium', 'hard'] as const;
 
 type ScoreRow = { name: string; score: number };
 
 export default function Leaderboards() {
+    const [modalOpen, setModalOpen] = useState(false);
+    const [modalMode, setModalMode] = useState<typeof MODES[number] | null>(null);
+
     return (
-        <div
-            style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'space-around',
-                gap: 16,
-                padding: 16,
-            }}
-        >
-            {MODES.map((mode) => (
-                <ModeBoard key={mode} mode={mode} />
-            ))}
-        </div>
+        <>
+            <div
+                style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'space-around',
+                    gap: 16,
+                    padding: 16,
+                }}
+            >
+                {MODES.map((mode) => (
+                    <ModeBoard
+                        key={mode}
+                        mode={mode}
+                        onExpand={() => {
+                            setModalMode(mode);
+                            setModalOpen(true);
+                        }}
+                    />
+                ))}
+            </div>
+
+            {modalMode && (
+                <LeaderboardModal
+                    isOpen={modalOpen}
+                    mode={modalMode}
+                    onClose={() => {
+                        setModalOpen(false);
+                        setModalMode(null);
+                    }}
+                />
+            )}
+        </>
     );
 }
 
-function ModeBoard({ mode }: { mode: typeof MODES[number] }) {
+function ModeBoard({
+    mode,
+    onExpand,
+}: {
+    mode: typeof MODES[number];
+    onExpand: () => void;
+}) {
     const [board, setBoard] = useState<ScoreRow[]>([]);
 
     useEffect(() => {
-        fetchLeaderboard(mode).then(setBoard).catch(console.error);
+        fetchLeaderboard(mode, 10) // just top 10 now
+            .then(setBoard)
+            .catch(console.error);
     }, [mode]);
 
     return (
@@ -75,6 +107,22 @@ function ModeBoard({ mode }: { mode: typeof MODES[number] }) {
                     </li>
                 ))}
             </ol>
+
+            <button
+                onClick={onExpand}
+                style={{
+                    marginTop: 8,
+                    background: 'none',
+                    border: 'none',
+                    color: '#00bcd4',
+                    cursor: 'pointer',
+                    fontSize: 14,
+                    textDecoration: 'underline',
+                }}
+            >
+                See Full Leaderboard
+            </button>
         </div>
     );
 }
+

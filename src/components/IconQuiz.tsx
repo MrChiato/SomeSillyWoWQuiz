@@ -7,6 +7,7 @@ import {
 } from 'react';
 import Fuse from 'fuse.js';
 import spells from '../data/spells.json';
+import { recordGuess } from '../lib/supabase';
 
 export type Spell = {
     names: string[];
@@ -170,10 +171,12 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
         );
         if (match) {
             spawnMessage(spell.names[0], 'correct');
+            recordGuess(spell.names[0], value, true);
             setScore((s) => s + 1);
             pickNextSpell();
         } else {
             spawnMessage(value, 'wrong');
+            recordGuess(spell.names[0], value, false);
             setWrongs((ws) => [...ws, value]);
             setLives((l) => l - 1);
             setAvailNames((a) => a.filter((n) => n !== value));
@@ -429,3 +432,4 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
         </div>
     );
 }
+

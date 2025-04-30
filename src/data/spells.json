@@ -327,7 +327,8 @@
     {
         "difficulty": 2,
         "names": [
-            "Evocation"
+            "Evocation",
+            "Purge"
         ],
         "iconUrl": "https://render-eu.worldofwarcraft.com/icons/56/spell_nature_purge.jpg",
         "hint": "Regenerate mana quickly.",

@@ -5,6 +5,7 @@ type NameModalProps = {
     initialName?: string;
     title?: string;
     onSubmit: (name: string) => void;
+    onClose: () => void;
 };
 
 export default function NameModal({
@@ -12,6 +13,7 @@ export default function NameModal({
     initialName = '',
     title = 'Game Over',
     onSubmit,
+    onClose,
 }: NameModalProps) {
     const [name, setName] = useState(initialName);
 
@@ -37,7 +39,25 @@ export default function NameModal({
                 width: '90%',
                 maxWidth: 360,
                 textAlign: 'center',
+                position: 'relative',
             }}>
+                <button
+                    onClick={onClose}
+                    style={{
+                        position: 'absolute',
+                        top: 8,
+                        right: 8,
+                        background: 'transparent',
+                        border: 'none',
+                        fontSize: 20,
+                        color: '#ff4d4f',
+                        cursor: 'pointer',
+                        fontWeight: 'bold',
+                    }}
+                    aria-label="Close"
+                >
+                    ×
+                </button>
                 <h2 style={{ marginBottom: '1rem' }}>{title}</h2>
                 <p style={{ marginBottom: '1rem' }}>Enter your name for the leaderboard:</p>
                 <input
