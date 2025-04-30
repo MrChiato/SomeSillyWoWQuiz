@@ -311,7 +311,6 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                     <img
                         src={`/api/image/${spell.id}`}
                         alt="Loading"
-                        aria-label={spell.names[0]}
                         draggable={false}
                         onContextMenu={(e) => e.preventDefault()}
                         style={{
