@@ -4,29 +4,20 @@ import {
     ChangeEvent,
     KeyboardEvent,
     useRef,
+    useMemo,
 } from 'react';
 import Fuse from 'fuse.js';
-import spells from '../data/spells.json';
+import { useAllSpells } from '../hooks/useAllSpells';
 import { recordGuess } from '../lib/supabase';
 
 export type Spell = {
+    id: string; 
     names: string[];
     iconUrl: string;
     hint: string;
     description: string;
     difficulty: number;
 };
-
-const allSpells: Spell[] = spells;
-const allNames = Array.from(
-    new Set(allSpells.flatMap((s) => s.names))
-).sort();
-
-const fuse = new Fuse(allNames, {
-    threshold: 0.4,
-    ignoreLocation: true,
-    distance: 100,
-});
 
 type IconQuizProps = {
     onGameOver: (finalScore: number, mode: 'easy' | 'medium' | 'hard') => void
@@ -39,6 +30,18 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
     const [score, setScore] = useState(0);
     const [lives, setLives] = useState(10);
     const [guess, setGuess] = useState('');
+
+    const spells = useAllSpells();
+    const allNames = useMemo(() => {
+        if (!spells) return [];
+        return Array.from(new Set(spells.flatMap((s) => s.names))).sort();
+    }, [spells]);
+
+    const fuse = useMemo(() => new Fuse(allNames, {
+        threshold: 0.4,
+        ignoreLocation: true,
+        distance: 100,
+    }), [allNames]);
 
     const [availNames, setAvailNames] = useState<string[]>(allNames);
 
@@ -115,9 +118,14 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
         }
     }, [highlighted]);
 
+    useEffect(() => {
+        if (!spells) return;
+        pickNextSpell();
+    }, [spells]);
 
     const pickNextSpell = () => {
-        const remaining = allSpells.filter((s) => !usedIcons.has(s.iconUrl));
+        if (!spells) return;
+        const remaining = spells.filter((s) => !usedIcons.has(s.iconUrl));
         if (remaining.length === 0) {
             onGameOver(score, lockMode!);
             return;
@@ -145,8 +153,6 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
         setAvailNames(allNames);
         setGuess('');
     };
-
-    useEffect(() => pickNextSpell(), []);
 
     useEffect(() => {
         if (wrongs.length >= 3 && spell) {
@@ -229,7 +235,10 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
     useEffect(() => {
         setHighlighted(-1);
     }, [suggestions.length]);
-
+    
+    if (spells === null) {
+        return <p style={{ color: '#eee', textAlign: 'center' }}>Loading spells…</p>;
+    }
     if (!spell) return null;
     return (
         <div
@@ -284,8 +293,8 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
 
                 <div style={{ position: 'relative' }}>
                     <img
-                        src={spell.iconUrl}
-                        alt=""
+                        src={`/api/image/${spell.id}`}
+                        alt="Loading"
                         aria-label={spell.names[0]}
                         draggable={false}
                         onContextMenu={(e) => e.preventDefault()}
