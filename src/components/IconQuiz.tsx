@@ -11,7 +11,7 @@ import { useAllSpells } from '../hooks/useAllSpells';
 import { recordGuess } from '../lib/supabase';
 
 export type Spell = {
-    id: string; 
+    id: string;
     names: string[];
     iconUrl: string;
     hint: string;
@@ -132,27 +132,43 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
         }
 
         const weights = remaining.map((s) => weightFor(s.difficulty));
-        const sum = weights.reduce((a, b) => a + b, 0);
-        let r = Math.random() * sum;
-        let cum = 0;
-        let choice = remaining[0];
 
+        const total = weights.reduce((a, b) => a + b, 0);
+        let r = Math.random() * total;
+        let cum = 0;
+        let chosenIndex = 0;
         for (let i = 0; i < remaining.length; i++) {
             cum += weights[i];
             if (r <= cum) {
-                choice = remaining[i];
+                chosenIndex = i;
                 break;
             }
         }
+        const choice = remaining[chosenIndex];
 
         setSpell(choice);
-        const angles = [0, 90, 180, 270];
-        setRotation(angles[Math.floor(Math.random() * angles.length)]);
+        setRotation([0, 90, 180, 270][Math.floor(Math.random() * 4)]);
         setWrongs([]);
         setUsedIcons((prev) => new Set(prev).add(choice.iconUrl));
         setAvailNames(allNames);
         setGuess('');
+
+        const items = remaining.map((spell, idx) => ({
+            spell,
+            weight: weights[idx],
+            idx,
+        }));
+        const nextItems = items
+            .filter((item) => item.idx !== chosenIndex)
+            .sort((a, b) => b.weight - a.weight)
+            .slice(0, 2);
+
+        nextItems.forEach(({ spell }) => {
+            const img = new Image();
+            img.src = `/api/image/${spell.id}`;
+        });
     };
+
 
     useEffect(() => {
         if (wrongs.length >= 3 && spell) {
@@ -235,7 +251,7 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
     useEffect(() => {
         setHighlighted(-1);
     }, [suggestions.length]);
-    
+
     if (spells === null) {
         return <p style={{ color: '#eee', textAlign: 'center' }}>Loading spells…</p>;
     }

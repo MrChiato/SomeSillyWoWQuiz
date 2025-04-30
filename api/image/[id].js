@@ -22,8 +22,11 @@ export default async function handler(req, res) {
   if (!up.ok) return res.status(up.status).send('upstream error')
 
   const contentType = up.headers.get('content-type') || 'application/octet-stream'
-  const buffer     = await up.arrayBuffer()
+  const buffer = await up.arrayBuffer()
+
+
 
   res.setHeader('Content-Type', contentType)
+  res.setHeader('Cache-Control', 'public, max-age=86400, s-maxage=86400, immutable')
   res.send(Buffer.from(buffer))
 }
