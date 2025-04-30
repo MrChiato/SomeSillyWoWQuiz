@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import { v4 as uuidv4 } from 'uuid';
+import { Spell } from '../components/IconQuiz';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
@@ -75,4 +76,21 @@ export async function recordGuess(spellName: string, userGuess: string, isCorrec
     if (error) {
         console.error('Failed to update spell stats', error);
     }
+}
+
+export async function fetchAllSpells(): Promise<Spell[]> {
+    const { data, error } = await supabase
+        .from('spells')
+        .select('*');
+
+    if (error) throw error;
+
+    return data.map((s) => ({
+        id: s.id,
+        names: s.names,
+        iconUrl: s.icon_url,
+        hint: s.hint,
+        description: s.description,
+        difficulty: s.difficulty,
+    }));
 }
