@@ -1,30 +1,29 @@
-
 import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_ROLE_KEY
+  process.env.VITE_SUPABASE_URL,
+  process.env.VITE_SUPABASE_ANON_KEY
 )
 
 export default async function handler(req, res) {
   const { id } = req.query
   if (Array.isArray(id)) return res.status(400).send('bad id')
-
   const { data, error } = await supabase
     .from('spells')
     .select('icon_url')
     .eq('id', id)
     .single()
 
-  if (error || !data?.icon_url) return res.status(404).send('not found')
+  if (error || !data?.icon_url) {
+    return res.status(404).send('not found')
+  }
 
-  const upstream = await fetch(data.icon_url)
-  if (!upstream.ok) return res.status(502).send('upstream error')
+  const up = await fetch(data.icon_url)
+  if (!up.ok) return res.status(up.status).send('upstream error')
 
-  const ct = upstream.headers.get('content-type') || 'application/octet-stream'
-  const buf = Buffer.from(await upstream.arrayBuffer())
+  const contentType = up.headers.get('content-type') || 'application/octet-stream'
+  const buffer = await up.arrayBuffer()
 
-  res.setHeader('Content-Type', ct)
-  res.setHeader('Cache-Control', 'public, max-age=86400, s-maxage=86400, immutable')
-  res.send(buf)
+  res.setHeader('Content-Type', contentType)
+  res.send(Buffer.from(buffer))
 }
