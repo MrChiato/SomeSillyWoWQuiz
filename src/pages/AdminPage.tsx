@@ -30,6 +30,11 @@ export default function AdminPage() {
     const fetchSpells = useCallback(async () => {
         try {
             const res = await fetch('/api/admin/spells')
+            .then(async r => {
+                const text = await r.text();
+                console.log('raw response:', text.substring(0,200));
+                return JSON.parse(text);
+              })
             const { data } = await res.json()
             setSpells(data)
         } catch (err) {
