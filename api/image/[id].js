@@ -1,8 +1,9 @@
+
 import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
-  process.env.VITE_SUPABASE_ANON_KEY
+  process.env.SUPABASE_SERVICE_ROLE_KEY
 )
 
 export default async function handler(req, res) {
@@ -15,21 +16,15 @@ export default async function handler(req, res) {
     .eq('id', id)
     .single()
 
-  if (error || !data?.icon_url) {
-    console.error('lookup failed:', error)
-    return res.status(404).send('not found')
-  }
+  if (error || !data?.icon_url) return res.status(404).send('not found')
 
   const upstream = await fetch(data.icon_url)
-  if (!upstream.ok) {
-    console.error('upstream fetch failed:', upstream.status)
-    return res.status(502).send('upstream error')
-  }
+  if (!upstream.ok) return res.status(502).send('upstream error')
 
-  const contentType = upstream.headers.get('content-type') || 'application/octet-stream'
-  const buffer = await upstream.arrayBuffer()
+  const ct = upstream.headers.get('content-type') || 'application/octet-stream'
+  const buf = Buffer.from(await upstream.arrayBuffer())
 
-  res.setHeader('Content-Type', contentType)
+  res.setHeader('Content-Type', ct)
   res.setHeader('Cache-Control', 'public, max-age=86400, s-maxage=86400, immutable')
-  res.send(Buffer.from(buffer))
+  res.send(buf)
 }
