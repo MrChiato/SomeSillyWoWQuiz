@@ -57,7 +57,7 @@ function ModeBoard({
     const [board, setBoard] = useState<ScoreRow[]>([]);
 
     useEffect(() => {
-        fetchLeaderboard(mode, 10) // just top 10 now
+        fetchLeaderboard(mode, 10)
             .then(setBoard)
             .catch(console.error);
     }, [mode]);

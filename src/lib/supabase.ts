@@ -12,7 +12,6 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     }
 });
 
-
 export async function fetchLeaderboard(mode: string, limit?: number) {
     let query = supabase
         .from('scores')
@@ -41,9 +40,6 @@ function getOrCreatePlayerId(): string {
 
 export async function submitScore(name: string, score: number, mode: string) {
     const playerId = getOrCreatePlayerId();
-
-
-
     const { data: existing, error: fetchError } = await supabase
         .from('scores')
         .select('score')

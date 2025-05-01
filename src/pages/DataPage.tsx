@@ -33,7 +33,7 @@ const cellCenter: React.CSSProperties = {
     fontFamily: 'monospace',
 };
 
-export default function DataPage() {
+function DataPage() {
     const spells = useAllSpells();
     const stats = useSpellStats();
 
@@ -230,3 +230,5 @@ export default function DataPage() {
         </div>
     );
 }
+
+export default DataPage

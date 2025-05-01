@@ -4,9 +4,10 @@ import Leaderboards from './components/Leaderboard';
 import NameModal from './components/NameModal';
 import DataPage from './pages/DataPage';
 import { fetchLeaderboard, submitScore } from './lib/supabase';
+import { Routes, Route, NavLink } from 'react-router-dom'
+import AdminPage from './pages/AdminPage';
 
 export default function App() {
-  const [view, setView] = useState<'quiz' | 'leaderboard' | 'data'>('quiz');
   const [modalOpen, setModalOpen] = useState(false);
   const [pendingScore, setPendingScore] = useState(0);
   const [quizKey, setQuizKey] = useState(0);
@@ -45,10 +46,28 @@ export default function App() {
       await submitScore(clean, pendingScore, quizMode);
       await fetchLeaderboard(quizMode);
       setModalOpen(false);
-      setView('leaderboard');
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const buttonStyle: React.CSSProperties = {
+    margin: '0 4px',
+    padding: '8px 16px',
+    fontSize: 16,
+    borderRadius: 6,
+    border: 'none',
+    backgroundColor: '#444',
+    color: '#eee',
+    textDecoration: 'none',
+    transition: 'background-color 0.2s, opacity 0.2s',
+  };
+
+  const activeStyle: React.CSSProperties = {
+    backgroundColor: '#666',
+    opacity: 0.6,
+    cursor: 'default',
+    pointerEvents: 'none',
   };
 
   return (
@@ -60,89 +79,56 @@ export default function App() {
       height: '100vh',
       position: 'relative',
       overflow: 'hidden',
+      display: 'flex',
+      flexDirection: 'column',
     }}>
-      {view !== 'data' && (
-        <button
-          onClick={() => setView('data')}
-          style={{
-            position: 'absolute',
-            top: 16,
-            left: 16,
-            padding: '8px 16px',
-            fontSize: 16,
-            borderRadius: 6,
-            border: 'none',
-            backgroundColor: '#444',
-            color: '#eee',
-            cursor: 'pointer',
-            zIndex: 1000,
-          }}
-        >
-          Show Data
-        </button>
-      )}
 
-      {view === 'data' ? (
-        <button
-          onClick={() => {
-            setView('quiz');
-            bumpQuizKey();
-          }}
-          style={{
-            position: 'absolute',
-            top: 16,
-            right: 16,
-            padding: '8px 16px',
-            fontSize: 16,
-            borderRadius: 6,
-            border: 'none',
-            backgroundColor: '#444',
-            color: '#eee',
-            cursor: 'pointer',
-            zIndex: 1000,
-          }}
+      <nav style={{ position: 'absolute', top: 16, right: 16, zIndex: 1000 }}>
+        <NavLink
+          to="/"
+          end
+          style={({ isActive }) =>
+            isActive ? { ...buttonStyle, ...activeStyle } : buttonStyle
+          }
         >
-          Back to Quiz
-        </button>
-      ) : (
-        <button
-          onClick={() => {
-            if (view === 'quiz') setView('leaderboard');
-            else {
-              setView('quiz');
-              bumpQuizKey();
-            }
-          }}
-          style={{
-            position: 'absolute',
-            top: 16,
-            right: 16,
-            padding: '8px 16px',
-            fontSize: 16,
-            borderRadius: 6,
-            border: 'none',
-            backgroundColor: '#444',
-            color: '#eee',
-            cursor: 'pointer',
-            zIndex: 1000,
-          }}
+          Quiz
+        </NavLink>
+
+        <NavLink
+          to="/leaderboard"
+          style={({ isActive }) =>
+            isActive ? { ...buttonStyle, ...activeStyle } : buttonStyle
+          }
         >
-          {view === 'quiz' ? 'Show Leaderboard' : 'Play Again'}
-        </button>
-      )}
+          Leaderboard
+        </NavLink>
+
+        <NavLink
+          to="/data"
+          style={({ isActive }) =>
+            isActive ? { ...buttonStyle, ...activeStyle } : buttonStyle
+          }
+        >
+          Data
+        </NavLink>
+      </nav>
 
       <div style={{
-        display: 'flex',
         flex: 1,
+        display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100%',
-        boxSizing: 'border-box',
         padding: 16,
+        boxSizing: 'border-box',
+        overflow: 'auto',
       }}>
-        {view === 'quiz' && <IconQuiz key={quizKey} onGameOver={handleGameOver} />}
-        {view === 'leaderboard' && <Leaderboards />}
-        {view === 'data' && <DataPage />}
+
+        <Routes>
+          <Route path="/" element={<IconQuiz onGameOver={handleGameOver} key={quizKey} />} />
+          <Route path="/leaderboard" element={<Leaderboards />} />
+          <Route path="/data" element={<DataPage />} />
+          <Route path="/admin" element={<AdminPage />} />
+        </Routes>
       </div>
 
       <NameModal
@@ -164,7 +150,7 @@ export default function App() {
         }}
       />
 
-      {view !== 'data' && gameOverInfo && (
+      {gameOverInfo && (
         <div style={{
           position: 'fixed',
           top: 0, left: 0,
@@ -193,7 +179,6 @@ export default function App() {
               onClick={() => {
                 setGameOverInfo(null);
                 bumpQuizKey();
-                setView('quiz');
               }}
               style={{
                 marginTop: '1rem',
