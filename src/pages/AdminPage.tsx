@@ -254,7 +254,6 @@ export default function AdminPage() {
                     style={{
                         width: '935px',
                         padding: '8px 12px',
-                        marginBottom: 16,
                         borderRadius: 4,
                         border: '1px solid #444',
                         background: '#1e1e1e',
@@ -266,9 +265,8 @@ export default function AdminPage() {
                     style={{
                         padding: '0.5rem 1rem',
                         marginRight: 12,
-                        background: '#444',
+                        background: '#0xFF',
                         border: 'none',
-                        borderRadius: 4,
                         color: '#eee',
                         cursor: 'pointer'
                     }}
