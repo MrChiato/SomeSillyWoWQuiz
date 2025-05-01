@@ -107,3 +107,12 @@ export async function fetchSpellStats(): Promise<SpellStat[]> {
     return data || [];
 }
 
+export async function recordFeedback(content: string) {
+    const { error } = await supabase
+        .from('feedback')
+        .insert([{ content }]);
+    if (error) {
+        console.error('Failed to record feedback', error);
+        throw error;
+    }
+}

@@ -3,15 +3,17 @@ import IconQuiz from './components/IconQuiz';
 import Leaderboards from './components/Leaderboard';
 import NameModal from './components/NameModal';
 import DataPage from './pages/DataPage';
-import { fetchLeaderboard, submitScore } from './lib/supabase';
+import { fetchLeaderboard, recordFeedback, submitScore } from './lib/supabase';
 import { Routes, Route, NavLink } from 'react-router-dom'
 import AdminPage from './pages/AdminPage';
+import FeedbackModal from './components/FeedbackModal';
 
 export default function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const [pendingScore, setPendingScore] = useState(0);
   const [quizKey, setQuizKey] = useState(0);
   const [quizMode, setQuizMode] = useState<'easy' | 'medium' | 'hard'>('easy');
+  const [isFeedbackOpen, setFeedbackOpen] = useState(false)
   const [gameOverInfo, setGameOverInfo] = useState<{
     finalScore: number;
     bestScore: number;
@@ -149,6 +151,58 @@ export default function App() {
           });
         }}
       />
+
+      <button
+        onClick={() => setFeedbackOpen(true)}
+        style={{
+          position: 'fixed',
+          bottom: 16,
+          right: 16,
+          padding: '8px 12px',
+          background: '#6D5AF2',
+          border: 'none',
+          borderRadius: 4,
+          cursor: 'pointer',
+          fontSize: 14,
+          zIndex: 1000,
+        }}
+      >
+        Give Feedback
+      </button>
+
+      <a
+        href="https://buymeacoffee.com/mattiassch"
+        target="_blank"
+        rel="noopener"
+        style={{
+          position: 'fixed',
+          bottom: 16,
+          left: 16,
+          padding: '4px 8px',
+          background: '#FFDD00',
+          color: '#000',
+          borderRadius: 4,
+          fontSize: 12,
+          textDecoration: 'none',
+          zIndex: 1000,
+        }}
+      >
+        ☕
+      </a>
+
+      {isFeedbackOpen && (
+        <FeedbackModal
+          onClose={() => setFeedbackOpen(false)}
+          onSubmit={async (text) => {
+            try {
+              await recordFeedback(text);
+            } catch {
+              alert("Could not send feedback.")
+            }
+            setFeedbackOpen(false);
+          }}
+        />
+      )}
 
       {gameOverInfo && (
         <div style={{
