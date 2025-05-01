@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { getAdminClient, setAdminKey } from '../lib/adminClient'
+import { adminSupabase } from '../lib/adminClient'
 
 type Spell = {
     id: string
@@ -54,10 +54,7 @@ export default function AdminPage() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ key: keyInput })
         })
-        if (res.ok) {
-            setLoggedIn(true);
-            setAdminKey(keyInput)
-        }
+        if (res.ok) setLoggedIn(true)
         else alert('Wrong key')
     }
 
@@ -147,7 +144,6 @@ export default function AdminPage() {
 
     const handleDelete = async (id: string) => {
         if (!window.confirm('Are you sure you want to delete this spell?')) return;
-        const adminSupabase = getAdminClient()
 
         const { error } = await adminSupabase
             .from('spells')
@@ -184,7 +180,6 @@ export default function AdminPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         setStatus(null)
-        const adminSupabase = getAdminClient()
 
         if (!iconUrl.trim() || !names.trim()) {
             setStatus('Icon URL and names are required')
@@ -264,7 +259,6 @@ export default function AdminPage() {
                     onClick={fetchSpells}
                     style={{
                         padding: '0.5rem 1rem',
-                        marginRight: 12,
                         background: '#0xFF',
                         border: 'none',
                         color: '#eee',
