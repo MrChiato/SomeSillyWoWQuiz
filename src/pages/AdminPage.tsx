@@ -215,20 +215,6 @@ export default function AdminPage() {
         <div style={{ padding: 16, color: '#eee', maxWidth: 960, margin: '0 auto' }}>
             <h1>Manage Spells</h1>
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
-                <button
-                    onClick={fetchSpells}
-                    style={{
-                        padding: '0.5rem 1rem',
-                        marginRight: 12,
-                        background: '#444',
-                        border: 'none',
-                        borderRadius: 4,
-                        color: '#eee',
-                        cursor: 'pointer'
-                    }}
-                >
-                    🔄
-                </button>
                 <input
                     placeholder="Search by name or URL…"
                     value={filter}
@@ -243,6 +229,20 @@ export default function AdminPage() {
                         color: '#eee',
                     }}
                 />
+                <button
+                    onClick={fetchSpells}
+                    style={{
+                        padding: '0.5rem 1rem',
+                        marginRight: 12,
+                        background: '#444',
+                        border: 'none',
+                        borderRadius: 4,
+                        color: '#eee',
+                        cursor: 'pointer'
+                    }}
+                >
+                    ↺
+                </button>
             </div>
 
             <div
