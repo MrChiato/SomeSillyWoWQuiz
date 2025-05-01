@@ -46,11 +46,11 @@ export default function AdminPage() {
         }
     }, []);
 
-
     async function handleLogin(e: { preventDefault: () => void }) {
         e.preventDefault()
         const res = await fetch('/api/admin/login', {
             method: 'POST',
+            credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ key: keyInput })
         })
