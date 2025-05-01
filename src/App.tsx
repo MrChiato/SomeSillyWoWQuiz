@@ -115,6 +115,15 @@ export default function App() {
         </NavLink>
       </nav>
 
+      <nav style={{ position: 'absolute', top: 16, left: 16, zIndex: 1000, opacity: 0 }}>
+        <NavLink
+          to="/admin"
+          end
+          style={() => buttonStyle}
+        >
+        </NavLink>
+      </nav>
+
       <div style={{
         flex: 1,
         display: 'flex',
