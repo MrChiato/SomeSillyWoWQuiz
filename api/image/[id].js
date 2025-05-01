@@ -6,6 +6,7 @@ const supabase = createClient(
 )
 
 export default async function handler(req, res) {
+  console.log("⚡️ /api/image/[id] invoked with", req.query.id);
   const { id } = req.query
   if (Array.isArray(id)) return res.status(400).send('bad id')
   const { data, error } = await supabase
