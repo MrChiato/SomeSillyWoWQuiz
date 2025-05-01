@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { adminSupabase } from '../lib/adminClient'
+import { getAdminClient, setAdminKey } from '../lib/adminClient'
 
 type Spell = {
     id: string
@@ -54,7 +54,10 @@ export default function AdminPage() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ key: keyInput })
         })
-        if (res.ok) setLoggedIn(true)
+        if (res.ok) {
+            setLoggedIn(true);
+            setAdminKey(keyInput)
+        }
         else alert('Wrong key')
     }
 
@@ -142,6 +145,25 @@ export default function AdminPage() {
         s.icon_url.includes(filter)
     )
 
+    const handleDelete = async (id: string) => {
+        if (!window.confirm('Are you sure you want to delete this spell?')) return;
+        const adminSupabase = getAdminClient()
+
+        const { error } = await adminSupabase
+            .from('spells')
+            .delete()
+            .eq('id', id);
+
+        if (error) {
+            console.error(error);
+            setStatus('Failed to delete');
+        } else {
+            setStatus('Deleted!');
+            setSpells(spells.filter(s => s.id !== id));
+        }
+    };
+
+
     const startEdit = (s: Spell) => {
         setEditingId(s.id)
         setIconUrl(s.icon_url)
@@ -162,6 +184,7 @@ export default function AdminPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         setStatus(null)
+        const adminSupabase = getAdminClient()
 
         if (!iconUrl.trim() || !names.trim()) {
             setStatus('Icon URL and names are required')
@@ -267,7 +290,7 @@ export default function AdminPage() {
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                     <thead>
                         <tr>
-                            {['Icon', 'Primary', 'Aliases', 'Hint', 'Diff', 'Edit'].map(h => (
+                            {['Icon', 'Primary', 'Aliases', 'Hint', 'Diff', 'Edit', 'Delete'].map(h => (
                                 <th key={h} style={{
                                     padding: '8px',
                                     textAlign: 'left',
@@ -310,6 +333,21 @@ export default function AdminPage() {
                                         }}
                                     >
                                         Edit
+                                    </button>
+                                </td>
+                                <td style={{ padding: 8 }}>
+                                    <button
+                                        onClick={() => handleDelete(s.id)}
+                                        style={{
+                                            background: '#e55353',
+                                            border: 'none',
+                                            padding: '4px 8px',
+                                            borderRadius: 4,
+                                            cursor: 'pointer',
+                                            color: '#fff',
+                                        }}
+                                    >
+                                        Delete
                                     </button>
                                 </td>
                             </tr>
