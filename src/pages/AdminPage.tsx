@@ -29,19 +29,23 @@ export default function AdminPage() {
 
     const fetchSpells = useCallback(async () => {
         try {
-            const res = await fetch('/api/admin/spells')
-            .then(async r => {
-                const text = await r.text();
-                console.log('raw response:', text.substring(0,200));
-                return JSON.parse(text);
-              })
-            const { data } = await res.json()
-            setSpells(data)
-        } catch (err) {
-            console.error(err)
-            setStatus('Failed to load spells')
+            const res = await fetch('/api/admin/spells', {
+                method: 'GET',
+                credentials: 'include',
+                headers: { 'Content-Type': 'application/json' },
+            });
+            if (!res.ok) {
+                const text = await res.text();
+                throw new Error(`HTTP ${res.status}: ${text}`);
+            }
+            const { data } = await res.json();
+            setSpells(data);
+        } catch (err: any) {
+            console.error(err);
+            setStatus('Failed to load spells: ' + err.message);
         }
-    }, [])
+    }, []);
+
 
     async function handleLogin(e: { preventDefault: () => void }) {
         e.preventDefault()
