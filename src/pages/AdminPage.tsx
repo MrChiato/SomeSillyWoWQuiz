@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { adminSupabase } from '../lib/adminClient'
 
 type Spell = {
@@ -27,6 +27,17 @@ export default function AdminPage() {
 
     const formRef = useRef<HTMLDivElement>(null)
 
+    const fetchSpells = useCallback(async () => {
+        try {
+            const res = await fetch('/api/admin/spells')
+            const { data } = await res.json()
+            setSpells(data)
+        } catch (err) {
+            console.error(err)
+            setStatus('Failed to load spells')
+        }
+    }, [])
+
     async function handleLogin(e: { preventDefault: () => void }) {
         e.preventDefault()
         const res = await fetch('/api/admin/login', {
@@ -39,12 +50,8 @@ export default function AdminPage() {
     }
 
     useEffect(() => {
-        if (!loggedIn) return
-        fetch('/api/admin/spells')
-            .then((r) => r.json())
-            .then(({ data }) => setSpells(data))
-            .catch(console.error)
-    }, [loggedIn])
+        if (loggedIn) fetchSpells()
+    }, [loggedIn, fetchSpells])
 
     if (!loggedIn) {
         if (!loggedIn) {
@@ -207,21 +214,36 @@ export default function AdminPage() {
     return (
         <div style={{ padding: 16, color: '#eee', maxWidth: 960, margin: '0 auto' }}>
             <h1>Manage Spells</h1>
-
-            <input
-                placeholder="Search by name or URL…"
-                value={filter}
-                onChange={e => setFilter(e.target.value)}
-                style={{
-                    width: '935px',
-                    padding: '8px 12px',
-                    marginBottom: 16,
-                    borderRadius: 4,
-                    border: '1px solid #444',
-                    background: '#1e1e1e',
-                    color: '#eee',
-                }}
-            />
+            <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
+                <button
+                    onClick={fetchSpells}
+                    style={{
+                        padding: '0.5rem 1rem',
+                        marginRight: 12,
+                        background: '#444',
+                        border: 'none',
+                        borderRadius: 4,
+                        color: '#eee',
+                        cursor: 'pointer'
+                    }}
+                >
+                    🔄
+                </button>
+                <input
+                    placeholder="Search by name or URL…"
+                    value={filter}
+                    onChange={e => setFilter(e.target.value)}
+                    style={{
+                        width: '935px',
+                        padding: '8px 12px',
+                        marginBottom: 16,
+                        borderRadius: 4,
+                        border: '1px solid #444',
+                        background: '#1e1e1e',
+                        color: '#eee',
+                    }}
+                />
+            </div>
 
             <div
                 style={{
