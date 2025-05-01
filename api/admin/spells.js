@@ -24,6 +24,20 @@ export default async function handler(req, res) {
             return res.status(200).json({ data })
         }
 
+        if (req.method === 'DELETE') {
+            const { id } = req.body;
+            const { error } = await supabaseAdmin
+                .from('spells')
+                .delete()
+                .eq('id', id);
+            if (error) {
+                console.error('[/api/admin/spells] delete error', error);
+                return res.status(500).json({ error: 'Database Error' });
+            }
+            return res.status(200).json({ data: null });
+        }
+
+
         if (req.method === 'POST' || req.method === 'PUT') {
             const payload = req.body
             let result

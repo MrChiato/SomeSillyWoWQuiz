@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { adminSupabase } from '../lib/adminClient'
 
 type Spell = {
     id: string
@@ -54,7 +53,9 @@ export default function AdminPage() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ key: keyInput })
         })
-        if (res.ok) setLoggedIn(true)
+        if (res.ok) {
+            setLoggedIn(true)
+        }
         else alert('Wrong key')
     }
 
@@ -143,21 +144,23 @@ export default function AdminPage() {
     )
 
     const handleDelete = async (id: string) => {
-        if (!window.confirm('Are you sure you want to delete this spell?')) return;
+        if (!window.confirm('Delete this spell?')) return;
 
-        const { error } = await adminSupabase
-            .from('spells')
-            .delete()
-            .eq('id', id);
-
-        if (error) {
-            console.error(error);
-            setStatus('Failed to delete');
+        const res = await fetch('/api/admin/spells', {
+            method: 'DELETE',
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id }),
+        });
+        if (!res.ok) {
+            console.error(await res.text());
+            setStatus('Delete failed');
         } else {
             setStatus('Deleted!');
             setSpells(spells.filter(s => s.id !== id));
         }
     };
+
 
 
     const startEdit = (s: Spell) => {
@@ -178,65 +181,52 @@ export default function AdminPage() {
     }
 
     const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault()
-        setStatus(null)
+        e.preventDefault();
+        setStatus(null);
 
         if (!iconUrl.trim() || !names.trim()) {
-            setStatus('Icon URL and names are required')
-            return
+            setStatus('Icon URL and names are required');
+            return;
         }
 
-        const payload = {
+        const body: Record<string, any> = {
             icon_url: iconUrl.trim(),
-            names: names.split(',').map(n => n.trim()).filter(Boolean),
+            names: names
+                .split(',')
+                .map((n) => n.trim())
+                .filter(Boolean),
             hint: hint.trim(),
             description: description.trim(),
             difficulty,
-        }
+        };
 
-        const primary = payload.names[0]
-
-        const { data: dup, error: dupErr } = await adminSupabase
-            .from('spells')
-            .select('id')
-            .or(
-                `icon_url.eq.${payload.icon_url},` +
-                `names.cs.{${primary}}`
-            )
-            .maybeSingle()
-
-        if (dupErr) {
-            console.error('dup check error', dupErr)
-            setStatus('Error checking duplicates')
-            return
-        }
-        if (dup && (!editingId || dup.id !== editingId)) {
-            setStatus('A spell with this icon or primary name already exists.')
-            return
-        }
-
-        let res
+        const method = editingId ? 'PUT' : 'POST';
         if (editingId) {
-            res = await adminSupabase
-                .from('spells')
-                .update(payload)
-                .eq('id', editingId)
-        } else {
-            res = await adminSupabase
-                .from('spells')
-                .insert([payload])
+            body.id = editingId;
         }
 
-        if (res.error) {
-            console.error(res.error)
-            setStatus('Failed to save')
-        } else {
-            setStatus(editingId ? 'Updated!' : 'Created!')
-            cancelEdit()
-            const { data } = await adminSupabase.from('spells').select('*')
-            setSpells(data!)
+        try {
+            const res = await fetch('/api/admin/spells', {
+                method,
+                credentials: 'include',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body),
+            });
+
+            const payloadRes = await res.json();
+            if (!res.ok) {
+                throw new Error(payloadRes.error || res.statusText);
+            }
+
+            setStatus(editingId ? 'Updated!' : 'Created!');
+            cancelEdit();
+            fetchSpells();
+        } catch (err: any) {
+            console.error('Save error', err);
+            setStatus('Failed to save: ' + err.message);
         }
-    }
+    };
+
 
     return (
         <div style={{ padding: 16, color: '#eee', maxWidth: 960, margin: '0 auto' }}>
