@@ -12,15 +12,7 @@ export default function Leaderboards() {
 
     return (
         <>
-            <div
-                style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    justifyContent: 'space-around',
-                    gap: 16,
-                    padding: 16,
-                }}
-            >
+            <div className="leaderboards">
                 {MODES.map((mode) => (
                     <ModeBoard
                         key={mode}
@@ -63,16 +55,7 @@ function ModeBoard({
     }, [mode]);
 
     return (
-        <div
-            style={{
-                flex: '1 1 300px',
-                maxWidth: 300,
-                backgroundColor: '#1e1e1e',
-                borderRadius: 8,
-                padding: 16,
-                boxSizing: 'border-box',
-            }}
-        >
+        <div className="modeBoard">
             <h2
                 style={{
                     textAlign: 'center',

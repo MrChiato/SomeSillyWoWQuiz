@@ -119,7 +119,7 @@ function DataPage() {
     return (
         <div style={{ padding: 16, color: '#eee' }}>
             <h1 style={{ textAlign: 'center' }}>Quiz Data</h1>
-            <div
+            <div className="tableWrapper"
                 style={{
                     maxHeight: '80vh',
                     overflowY: 'auto',

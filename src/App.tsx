@@ -146,6 +146,8 @@ export default function App() {
         isOpen={modalOpen}
         initialName={localStorage.getItem(`wowQuizPlayerNamev2_${quizMode}`) || ''}
         title="New High Score!"
+        score={pendingScore}
+        mode={quizMode}
         onSubmit={handleModalSubmit}
         onClose={() => {
           setModalOpen(false);

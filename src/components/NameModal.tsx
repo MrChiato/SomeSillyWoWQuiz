@@ -4,6 +4,8 @@ type NameModalProps = {
     isOpen: boolean;
     initialName?: string;
     title?: string;
+    score: number;
+    mode: 'easy' | 'medium' | 'hard';
     onSubmit: (name: string) => void;
     onClose: () => void;
 };
@@ -12,10 +14,17 @@ export default function NameModal({
     isOpen,
     initialName = '',
     title = 'Game Over',
+    score,
+    mode,
     onSubmit,
     onClose,
 }: NameModalProps) {
     const [name, setName] = useState(initialName);
+
+    const tweetText = encodeURIComponent(
+        `I just got ${score} points in the WoW Abilites Quiz ${mode ? `on ${mode} difficulty` : ''}!`
+    );
+    const quizUrl = encodeURIComponent('https://www.wowabilityquiz.com/');
 
     useEffect(() => {
         if (isOpen) setName(initialName);
@@ -59,7 +68,8 @@ export default function NameModal({
                     ×
                 </button>
                 <h2 style={{ marginBottom: '1rem' }}>{title}</h2>
-                <p style={{ marginBottom: '1rem' }}>Enter your name for the leaderboard:</p>
+                <p style={{ marginBottom: '1rem' }}>You got a new record of <b>{score}</b> on <i>{mode}</i> mode!</p>
+                <p style={{ marginBottom: '1rem' }}>Enter a name for the leaderboard:</p>
                 <input
                     value={name}
                     onChange={e => setName(e.target.value)}
@@ -75,21 +85,51 @@ export default function NameModal({
                         color: '#eee',
                     }}
                 />
-                <button
-                    onClick={() => onSubmit(name.trim())}
-                    disabled={!name.trim()}
+                <div
                     style={{
-                        padding: '0.5rem 1rem',
-                        fontSize: '1rem',
-                        borderRadius: 4,
-                        border: 'none',
-                        backgroundColor: name.trim() ? '#28a745' : '#555',
-                        color: '#fff',
-                        cursor: name.trim() ? 'pointer' : 'not-allowed',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
                     }}
                 >
-                    Submit
-                </button>
+                    <button
+                        onClick={() => onSubmit(name.trim())}
+                        disabled={!name.trim()}
+                        style={{
+                            padding: '0.5rem 1rem',
+                            width: '40%',
+                            fontSize: '1rem',
+                            borderRadius: 4,
+                            border: 'none',
+                            backgroundColor: name.trim() ? '#28a745' : '#555',
+                            color: '#fff',
+                            cursor: name.trim() ? 'pointer' : 'not-allowed',
+                        }}
+                    >
+                        Submit
+                    </button>
+                    <a
+                        href={`https://twitter.com/intent/tweet?text=${tweetText}&url=${quizUrl}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                            display: 'inline-block',
+                            width: '40%',
+                            marginTop: '1rem',
+                            padding: '0.5rem 1rem',
+                            backgroundColor: '#1DA1F2',
+                            color: '#fff',
+                            borderRadius: 4,
+                            textDecoration: 'none',
+                            fontWeight: 'bold',
+                            transition: 'background-color 0.2s',
+                        }}
+                        onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#0d95e8')}
+                        onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#1DA1F2')}
+                    >
+                        Share on Twitter
+                    </a>
+                </div>
             </div>
         </div>
     );
