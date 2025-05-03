@@ -24,7 +24,6 @@ type IconQuizProps = {
 };
 
 export default function IconQuiz({ onGameOver }: IconQuizProps) {
-    const [spell, setSpell] = useState<Spell | null>(null);
     const [wrongs, setWrongs] = useState<string[]>([]);
     const [usedIcons, setUsedIcons] = useState<Set<string>>(new Set());
     const [score, setScore] = useState(0);
@@ -47,7 +46,8 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
 
     const [highlighted, setHighlighted] = useState(-1);
 
-    const [rotation, setRotation] = useState(0);
+    type QuizItem = { spell: Spell; rotation: number }
+    const [item, setItem] = useState<QuizItem | null>(null)
 
     const questionCount = usedIcons.size;
     const [lockMode, setLockMode] = useState<'easy' | 'medium' | 'hard' | null>(null);
@@ -145,9 +145,10 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
             }
         }
         const choice = remaining[chosenIndex];
+        const angle = [0, 90, 180, 270][Math.floor(Math.random() * 4)]
 
-        setSpell(choice);
-        setRotation([0, 90, 180, 270][Math.floor(Math.random() * 4)]);
+        setItem({ spell: choice, rotation: angle })
+
         setWrongs([]);
         setUsedIcons((prev) => new Set(prev).add(choice.iconUrl));
         setAvailNames(allNames);
@@ -169,25 +170,24 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
         });
     };
 
-
     useEffect(() => {
-        if (wrongs.length >= 3 && spell) {
+        if (wrongs.length >= 3 && item) {
             setLives((l) => l - 1);
             spawnMessage(spell.names[0], 'reveal');
             pickNextSpell();
         }
-    }, [wrongs, spell]);
+    }, [wrongs, item]);
 
     useEffect(() => {
-        if (lives <= 0 && spell) {
+        if (lives <= 0 && item) {
             spawnMessage(spell.names[0], 'wrong');
             onGameOver(score, lockMode!);
         }
-    }, [lives]);
+    }, [lives, item]);
 
     const makeGuess = (value: string) => {
         if (!lockMode) lockIt();
-        if (!spell) return;
+        if (!item) return;
         const match = spell.names.find(
             (n) => n.toLowerCase() === value.toLowerCase()
         );
@@ -208,7 +208,7 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
 
     const onPass = () => {
         if (!lockMode) lockIt();
-        if (!spell) return;
+        if (!item) return;
         setLives((l) => l - 1);
         spawnMessage(spell.names[0], 'reveal');
         pickNextSpell();
@@ -255,7 +255,9 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
     if (spells === null) {
         return <p style={{ color: '#eee', textAlign: 'center' }}>Loading spells…</p>;
     }
-    if (!spell) return null;
+    
+    if (!item) return null
+    const { spell, rotation } = item
     return (
         <div
             style={{
