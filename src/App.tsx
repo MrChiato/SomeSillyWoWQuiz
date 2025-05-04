@@ -201,6 +201,30 @@ export default function App() {
         ☕
       </a>
 
+      <a
+        href="https://www.wowabilityquiz.com"
+        target="_blank"
+        rel="noopener"
+        style={{
+          position: 'fixed',
+          bottom: 16,
+          left: 60,
+          background: 'transparent',
+          borderRadius: 4,
+          zIndex: 1000,
+        }}
+      >
+        <img
+          src="https://cdn2.steamgriddb.com/icon_thumb/882137f311c5728f8e257e56820af92c.png"
+          alt="LoL Quiz"
+          style={{
+            display: 'block',
+            width: 26,
+            height: 26,
+          }}
+        />
+      </a>
+
       {isFeedbackOpen && (
         <FeedbackModal
           onClose={() => setFeedbackOpen(false)}
