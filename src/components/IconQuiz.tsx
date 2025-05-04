@@ -200,7 +200,7 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
             pendingGuesses.current.push({
                 spellname: spell.names[0],
                 userguess: value,
-                iscorrect: false
+                iscorrect: true
             });
             setScore((s) => s + 1);
             pickNextSpell();
