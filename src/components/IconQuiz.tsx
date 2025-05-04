@@ -167,7 +167,7 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
 
         nextItems.forEach(({ spell }) => {
             const img = new Image();
-            img.src = `/api/image/${spell.id}`;
+            img.src = spell.iconUrl;
         });
     };
 
@@ -324,7 +324,7 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
 
                 <div style={{ position: 'relative' }}>
                     <img
-                        src={`/api/image/${spell.id}`}
+                        src={spell.iconUrl}
                         alt="Loading"
                         draggable={false}
                         onContextMenu={(e) => e.preventDefault()}
