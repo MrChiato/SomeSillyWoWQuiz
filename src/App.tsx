@@ -202,7 +202,7 @@ export default function App() {
       </a>
 
       <a
-        href="https://www.wowabilityquiz.com"
+        href="https://www.lolabilityquiz.com"
         target="_blank"
         rel="noopener"
         style={{
