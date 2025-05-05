@@ -264,7 +264,7 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
     }, [lives, item]);
 
     const makeGuess = (value: string) => {
-        if (lives <= 0 || answered) return; 
+        if (lives <= 0 || answered) return;
         if (!lockMode) lockIt();
         if (!item) return;
         const match = spell.names.find(
@@ -272,7 +272,7 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
         );
 
         if (match) {
-            setAnswered(true); 
+            setAnswered(true);
             spawnMessage(spell.names[0], 'correct');
             pendingGuesses.current.push({
                 spellname: spell.names[0],
@@ -486,10 +486,11 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
                                     justifyContent: 'center',
 
                                     borderRadius: 6,
+                                    color: '#eee',
                                     border: babyDisabled.has(opt) ? '1px solid #666' : '1px solid #444',
                                     backgroundColor: babyDisabled.has(opt) ? '#555' : '#222',
-                                    color: '#eee',
-                                    cursor: lives > 0 ? 'pointer' : 'not-allowed',
+                                    cursor: babyDisabled.has(opt) ? 'not-allowed' : 'pointer',
+                                    pointerEvents: babyDisabled.has(opt) ? 'none' : 'auto',
                                 }}
                             >
                                 {opt}
