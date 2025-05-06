@@ -336,7 +336,7 @@ export default function IconQuiz({ onGameOver }: IconQuizProps) {
 
     const suggestions = rawMatches
         .filter((n) => availNames.includes(n))
-        .slice(0, 10);
+        .slice(0, 20);
 
     useEffect(() => {
         setHighlighted(-1);
